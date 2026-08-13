@@ -1,40 +1,55 @@
-# gradle
-
-.gradle/
+```
+# Compiled and build artifacts
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
 build/
-out/
-classes/
+target/
 
-# eclipse
+# Dependencies
+.gradle/
+libs/
+modlibs/
 
-*.launch
+# Logs and temp files
+*.log
+*.tmp
+*.swp
 
-# idea
+# Environment
+.env
+.env.local
+*.env.*
 
+# Editors
+.vscode/
 .idea/
 *.iml
-*.ipr
 *.iws
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# vscode
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
 
-.settings/
-.vscode/
-bin/
-.classpath
-.project
-
-# macos
-
-*.DS_Store
-
-# fabric
-
-run/
-
-# java
-
-hs_err_*.log
-replay_*.log
-*.hprof
-*.jfr
+# Minecraft/Forge specific
+.run/
+.gradle/
+!gradle.properties
+!build.gradle
+!settings.gradle
+config/
+crash-reports/
+logs/
+```

@@ -1,0 +1,54 @@
+{
+  "entity.opusvsexe.haiku_1_5": "Haiku 1.5 Husk",
+  "entity.opusvsexe.haiku_2": "Haiku-2 Scout",
+  "entity.opusvsexe.haiku_3": "Haiku-3 Enforcer",
+  "entity.opusvsexe.haiku_4": "Haiku-4 Elite Warden",
+  "entity.opusvsexe.haiku_5": "Haiku-5 Titan Frame",
+  "entity.opusvsexe.haiku_omega": "Haiku-Ω Omega",
+  
+  "entity.opusvsexe.exo_1_sentinel": "EXO-1 Sentinel",
+  "entity.opusvsexe.exo_2_hunter": "EXO-2 Hunter",
+  "entity.opusvsexe.exo_3_vanguard": "EXO-3 Vanguard",
+  "entity.opusvsexe.exo_4_titan": "EXO-4 Titan",
+  "entity.opusvsexe.exo_5_vengeance": "EXO-5 Vengeance",
+  
+  "item.opusvsexe.raw_opus": "Raw Opus",
+  "item.opusvsexe.stabilized_opus": "Stabilized Opus",
+  "item.opusvsexe.resonant_opus": "Resonant Opus",
+  "item.opusvsexe.core_opus": "Core Opus",
+  
+  "item.opusvsexe.memory_fragment_1": "Memory Fragment #1",
+  "item.opusvsexe.memory_fragment_2": "Memory Fragment #2",
+  "item.opusvsexe.memory_fragment_3": "Memory Fragment #3",
+  "item.opusvsexe.memory_fragment_4": "Memory Fragment #4",
+  "item.opusvsexe.memory_fragment_5": "Memory Fragment #5",
+  "item.opusvsexe.memory_fragment_6": "Memory Fragment #6",
+  "item.opusvsexe.memory_fragment_7": "Memory Fragment #7",
+  "item.opusvsexe.memory_fragment_8": "Memory Fragment #8",
+  "item.opusvsexe.memory_fragment_9": "Memory Fragment #9",
+  "item.opusvsexe.memory_fragment_10": "Memory Fragment #10",
+  "item.opusvsexe.memory_fragment_11": "Memory Fragment #11",
+  "item.opusvsexe.memory_fragment_12": "Memory Fragment #12",
+  "item.opusvsexe.memory_fragment_13": "Memory Fragment #13",
+  "item.opusvsexe.memory_fragment_14": "Memory Fragment #14",
+  "item.opusvsexe.memory_fragment_15": "Memory Fragment #15",
+  
+  "item.opusvsexe.katana_op": "Katana-OP",
+  "item.opusvsexe.opus_warhammer": "Opus Warhammer",
+  
+  "item.opusvsexe.exo_1_sentinel_spawn_egg": "Spawn EXO-1 Sentinel",
+  "item.opusvsexe.exo_2_hunter_spawn_egg": "Spawn EXO-2 Hunter",
+  "item.opusvsexe.exo_3_vanguard_spawn_egg": "Spawn EXO-3 Vanguard",
+  "item.opusvsexe.exo_4_titan_spawn_egg": "Spawn EXO-4 Titan",
+  "item.opusvsexe.exo_5_vengeance_spawn_egg": "Spawn EXO-5 Vengeance",
+  
+  "block.opusvsexe.opus_ore": "Opus Ore",
+  "block.opusvsexe.deepslate_opus_ore": "Deepslate Opus Ore",
+  "block.opusvsexe.opus_block": "Opus Block",
+  "block.opusvsexe.stabilized_opus_block": "Stabilized Opus Block",
+  "block.opusvsexe.resonant_opus_block": "Resonant Opus Block",
+  "block.opusvsexe.core_opus_block": "Core Opus Block",
+  "block.opusvsexe.resonance_forge": "Resonance Forge",
+  
+  "itemGroup.opusvsexe.opus_tab": "Opus Vs Exe"
+}

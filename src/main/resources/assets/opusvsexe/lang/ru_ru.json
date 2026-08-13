@@ -1,0 +1,54 @@
+{
+  "entity.opusvsexe.haiku_1_5": "Хаику 1.5 Хаск",
+  "entity.opusvsexe.haiku_2": "Хаику-2 Разведчик",
+  "entity.opusvsexe.haiku_3": "Хаику-3 Исполнитель",
+  "entity.opusvsexe.haiku_4": "Хаику-4 Элитный Надзиратель",
+  "entity.opusvsexe.haiku_5": "Хаику-5 Титан",
+  "entity.opusvsexe.haiku_omega": "Хаику-Ω Омега",
+  
+  "entity.opusvsexe.exo_1_sentinel": "ЭКС-1 Часовой",
+  "entity.opusvsexe.exo_2_hunter": "ЭКС-2 Охотник",
+  "entity.opusvsexe.exo_3_vanguard": "ЭКС-3 Авангард",
+  "entity.opusvsexe.exo_4_titan": "ЭКС-4 Титан",
+  "entity.opusvsexe.exo_5_vengeance": "ЭКС-5 Возмездие",
+  
+  "item.opusvsexe.raw_opus": "Необработанный Опус",
+  "item.opusvsexe.stabilized_opus": "Стабилизированный Опус",
+  "item.opusvsexe.resonant_opus": "Резонансный Опус",
+  "item.opusvsexe.core_opus": "Ядро Опуса",
+  
+  "item.opusvsexe.memory_fragment_1": "Фрагмент памяти #1",
+  "item.opusvsexe.memory_fragment_2": "Фрагмент памяти #2",
+  "item.opusvsexe.memory_fragment_3": "Фрагмент памяти #3",
+  "item.opusvsexe.memory_fragment_4": "Фрагмент памяти #4",
+  "item.opusvsexe.memory_fragment_5": "Фрагмент памяти #5",
+  "item.opusvsexe.memory_fragment_6": "Фрагмент памяти #6",
+  "item.opusvsexe.memory_fragment_7": "Фрагмент памяти #7",
+  "item.opusvsexe.memory_fragment_8": "Фрагмент памяти #8",
+  "item.opusvsexe.memory_fragment_9": "Фрагмент памяти #9",
+  "item.opusvsexe.memory_fragment_10": "Фрагмент памяти #10",
+  "item.opusvsexe.memory_fragment_11": "Фрагмент памяти #11",
+  "item.opusvsexe.memory_fragment_12": "Фрагмент памяти #12",
+  "item.opusvsexe.memory_fragment_13": "Фрагмент памяти #13",
+  "item.opusvsexe.memory_fragment_14": "Фрагмент памяти #14",
+  "item.opusvsexe.memory_fragment_15": "Фрагмент памяти #15",
+  
+  "item.opusvsexe.katana_op": "Катана-OP",
+  "item.opusvsexe.opus_warhammer": "Боевой молот из Опуса",
+  
+  "item.opusvsexe.exo_1_sentinel_spawn_egg": "Призыв ЭКС-1 Часовой",
+  "item.opusvsexe.exo_2_hunter_spawn_egg": "Призыв ЭКС-2 Охотник",
+  "item.opusvsexe.exo_3_vanguard_spawn_egg": "Призыв ЭКС-3 Авангард",
+  "item.opusvsexe.exo_4_titan_spawn_egg": "Призыв ЭКС-4 Титан",
+  "item.opusvsexe.exo_5_vengeance_spawn_egg": "Призыв ЭКС-5 Возмездие",
+  
+  "block.opusvsexe.opus_ore": "Руда Опуса",
+  "block.opusvsexe.deepslate_opus_ore": "Глубинная руда Опуса",
+  "block.opusvsexe.opus_block": "Блок Опуса",
+  "block.opusvsexe.stabilized_opus_block": "Блок стабилизированного Опуса",
+  "block.opusvsexe.resonant_opus_block": "Блок резонансного Опуса",
+  "block.opusvsexe.core_opus_block": "Блок ядра Опуса",
+  "block.opusvsexe.resonance_forge": "Резонансная кузня",
+  
+  "itemGroup.opusvsexe.opus_tab": "Опус против Экзе"
+}
