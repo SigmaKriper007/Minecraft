@@ -10,6 +10,7 @@ import com.opus.block.ResonanceForgeBlock;
 import com.opus.block.RewardVaultBlock;
 import com.opus.block.ToggleBlock;
 import com.opus.block.TrialTriggerBlock;
+import com.opus.block.AltarHeartBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
@@ -134,6 +135,25 @@ public class ModBlocks {
     public static final Block DORMANT_SPAWNER = register("dormant_spawner",
         new DormantSpawnerBlock(BlockBehaviour.Properties.of().strength(4.0f, 8.0f)
             .lightLevel(s -> s.getValue(DormantSpawnerBlock.ACTIVE) ? 9 : 0)));
+
+    // ===== Eternal Colosseum blocks =====
+    public static final Block REINFORCED_OPUS_BLOCK = register("reinforced_opus_block",
+        new Block(BlockBehaviour.Properties.of().strength(8.0f, 10.0f).requiresCorrectToolForDrops().sound(SoundType.METAL)));
+    
+    public static final Block HAIKU_AMBER_BLOCK = register("haiku_amber_block",
+        new Block(BlockBehaviour.Properties.of().strength(3.0f, 5.0f).lightLevel(s -> 10)));
+    
+    public static final Block ALTAR_HEART = register("altar_heart",
+        new AltarHeartBlock(BlockBehaviour.Properties.of().strength(-1.0f).lightLevel(s -> s.getValue(AltarHeartBlock.ACTIVATED) ? 15 : 8)));
+    
+    public static final Block COLOSSEUM_CONCRETE = register("colosseum_concrete",
+        new Block(BlockBehaviour.Properties.of().strength(3.5f, 6.0f).requiresCorrectToolForDrops()));
+    
+    public static final Block AMBER_PILLAR = register("amber_pillar",
+        new Block(BlockBehaviour.Properties.of().strength(2.5f, 5.0f).lightLevel(s -> 8)));
+    
+    public static final Block COLOSSEUM_WALL = register("colosseum_wall",
+        new Block(BlockBehaviour.Properties.of().strength(5.0f, 8.0f).requiresCorrectToolForDrops().sound(SoundType.METAL)));
 
     private static Block register(String name, Block block) {
         return Registry.register(BuiltInRegistries.BLOCK, OpusVsExe.id(name), block);
