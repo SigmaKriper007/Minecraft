@@ -121,6 +121,20 @@ public class ModItems {
     public static final Item DORMANT_SPAWNER = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("dormant_spawner"),
         new BlockItem(ModBlocks.DORMANT_SPAWNER, new Item.Properties()));
 
+    // Eternal Colosseum block items
+    public static final Item REINFORCED_OPUS_BLOCK = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("reinforced_opus_block"),
+        new BlockItem(ModBlocks.REINFORCED_OPUS_BLOCK, new Item.Properties()));
+    public static final Item HAIKU_AMBER_BLOCK = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_amber_block"),
+        new BlockItem(ModBlocks.HAIKU_AMBER_BLOCK, new Item.Properties()));
+    public static final Item ALTAR_HEART = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("altar_heart"),
+        new BlockItem(ModBlocks.ALTAR_HEART, new Item.Properties()));
+    public static final Item COLOSSEUM_CONCRETE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("colosseum_concrete"),
+        new BlockItem(ModBlocks.COLOSSEUM_CONCRETE, new Item.Properties()));
+    public static final Item AMBER_PILLAR = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("amber_pillar"),
+        new BlockItem(ModBlocks.AMBER_PILLAR, new Item.Properties()));
+    public static final Item COLOSSEUM_WALL = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("colosseum_wall"),
+        new BlockItem(ModBlocks.COLOSSEUM_WALL, new Item.Properties()));
+
     // Opus materials
     public static final Item RAW_OPUS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("raw_opus"), new Item(new Item.Properties()));
     public static final Item STABILIZED_OPUS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("stabilized_opus"), new Item(new Item.Properties()));
@@ -179,6 +193,20 @@ public class ModItems {
         new ShadowAssassinArmorItem(SHADOW_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final Item SHADOW_BOOTS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("shadow_boots"),
         new ShadowAssassinArmorItem(SHADOW_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    // Spawn eggs
+    public static final Item HAIKU_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_spawn_egg"),
+        new SpawnEggItem(ModEntities.HAIKU, new Item.Properties()));
+    public static final Item HAIKU_OMEGA_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_omega_spawn_egg"),
+        new SpawnEggItem(ModEntities.HAIKU_OMEGA, new Item.Properties()));
+
+    // Eternal Colosseum items
+    public static final Item HAIKU_CORE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_core"),
+        new HaikuCoreItem(new Item.Properties()));
+    public static final Item OPUS_FRAGMENT = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("opus_fragment"),
+        new Item(new Item.Properties()));
+    public static final Item AI_TEAR = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("ai_tear"),
+        new Item(new Item.Properties()));
 
     // Haiku spawn eggs
     public static final Item HAIKU_1_5_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_1_5_spawn_egg"),
