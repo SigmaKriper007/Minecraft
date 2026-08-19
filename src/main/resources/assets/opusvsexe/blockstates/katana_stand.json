@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "opusvsexe:block/katana_stand", "y": 0}, "facing=east": {"model": "opusvsexe:block/katana_stand", "y": 90}, "facing=south": {"model": "opusvsexe:block/katana_stand", "y": 180}, "facing=west": {"model": "opusvsexe:block/katana_stand", "y": 270}}}

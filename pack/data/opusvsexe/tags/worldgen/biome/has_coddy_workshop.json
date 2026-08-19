@@ -1,0 +1,20 @@
+{
+  "values": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    "minecraft:savanna",
+    "minecraft:savanna_plateau",
+    "minecraft:taiga",
+    "minecraft:snowy_taiga",
+    "minecraft:meadow",
+    "minecraft:forest",
+    {
+      "id": "opusvsexe:steel_wastes",
+      "required": false
+    },
+    {
+      "id": "opusvsexe:silicon_forest",
+      "required": false
+    }
+  ]
+}

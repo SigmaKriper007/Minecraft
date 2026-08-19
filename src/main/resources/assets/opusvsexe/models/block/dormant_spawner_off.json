@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/cube_bottom_top", "textures": {"bottom": "opusvsexe:block/dormant_spawner_side_off", "top": "opusvsexe:block/dormant_spawner_top_off", "side": "opusvsexe:block/dormant_spawner_side_off"}}

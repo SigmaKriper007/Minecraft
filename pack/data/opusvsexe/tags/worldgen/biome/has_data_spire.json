@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:dark_forest",
+    "minecraft:old_growth_pine_taiga",
+    "minecraft:birch_forest",
+    "minecraft:windswept_forest",
+    {
+      "id": "opusvsexe:silicon_forest",
+      "required": false
+    },
+    {
+      "id": "opusvsexe:fractured_heights",
+      "required": false
+    }
+  ]
+}

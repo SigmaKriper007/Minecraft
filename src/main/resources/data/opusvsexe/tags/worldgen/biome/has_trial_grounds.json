@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:windswept_hills",
+    "minecraft:windswept_gravelly_hills",
+    "minecraft:stony_peaks",
+    "minecraft:jagged_peaks",
+    "minecraft:frozen_peaks",
+    {
+      "id": "opusvsexe:fractured_heights",
+      "required": false
+    },
+    {
+      "id": "opusvsexe:memory_marshes",
+      "required": false
+    }
+  ]
+}

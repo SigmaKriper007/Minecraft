@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "opusvsexe:block/scanner_eye", "y": 0}, "facing=east": {"model": "opusvsexe:block/scanner_eye", "y": 90}, "facing=south": {"model": "opusvsexe:block/scanner_eye", "y": 180}, "facing=west": {"model": "opusvsexe:block/scanner_eye", "y": 270}}}

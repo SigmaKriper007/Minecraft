@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "triggered=false": { "model": "opusvsexe:block/trial_trigger" },
+    "triggered=true": { "model": "opusvsexe:block/trial_trigger" }
+  }
+}

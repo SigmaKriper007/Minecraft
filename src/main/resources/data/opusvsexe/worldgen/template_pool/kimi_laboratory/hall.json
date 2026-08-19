@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "opusvsexe:kimi_laboratory/hall",
+        "processors": "opusvsexe:lab_degradation",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

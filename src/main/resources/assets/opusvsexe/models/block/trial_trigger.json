@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/cube_bottom_top", "textures": {"bottom": "opusvsexe:block/trial_trigger_bottom", "top": "opusvsexe:block/trial_trigger_top", "side": "opusvsexe:block/trial_trigger_side"}}

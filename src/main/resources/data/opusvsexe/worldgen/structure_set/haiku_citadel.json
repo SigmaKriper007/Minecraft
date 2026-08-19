@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "opusvsexe:haiku_citadel",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 140,
+    "separation": 90,
+    "salt": 990001,
+    "spread_type": "triangular"
+  }
+}

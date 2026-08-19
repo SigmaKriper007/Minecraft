@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/orientable", "textures": {"top": "opusvsexe:block/pulse_turret_top", "front": "opusvsexe:block/pulse_turret_front", "side": "opusvsexe:block/pulse_turret_side"}}

@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:swamp",
+    "minecraft:mangrove_swamp",
+    "minecraft:dark_forest",
+    "minecraft:windswept_savanna",
+    {
+      "id": "opusvsexe:memory_marshes",
+      "required": false
+    },
+    {
+      "id": "opusvsexe:fractured_heights",
+      "required": false
+    }
+  ]
+}

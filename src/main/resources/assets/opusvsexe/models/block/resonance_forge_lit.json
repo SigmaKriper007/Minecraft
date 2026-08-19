@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "opusvsexe:block/resonance_forge_top",
+    "front": "opusvsexe:block/resonance_forge_front_lit",
+    "side": "opusvsexe:block/resonance_forge_side"
+  }
+}

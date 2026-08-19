@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:badlands",
+    "minecraft:eroded_badlands",
+    "minecraft:wooded_badlands",
+    "minecraft:desert",
+    {
+      "id": "opusvsexe:the_core",
+      "required": false
+    }
+  ]
+}

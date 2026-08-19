@@ -1,0 +1,74 @@
+{
+  "katana_swing": {
+    "subtitle": "opusvsexe.subtitle.katana_swing",
+    "sounds": [
+      "opusvsexe:katana_swing"
+    ]
+  },
+  "katana_hit": {
+    "subtitle": "opusvsexe.subtitle.katana_hit",
+    "sounds": [
+      "opusvsexe:katana_hit"
+    ]
+  },
+  "hammer_hit": {
+    "subtitle": "opusvsexe.subtitle.hammer_hit",
+    "sounds": [
+      "opusvsexe:hammer_hit"
+    ]
+  },
+  "katana_ultimate": {
+    "subtitle": "opusvsexe.subtitle.katana_ultimate",
+    "sounds": [
+      "opusvsexe:katana_ultimate"
+    ]
+  },
+  "hammer_ultimate": {
+    "subtitle": "opusvsexe.subtitle.hammer_ultimate",
+    "sounds": [
+      "opusvsexe:hammer_ultimate"
+    ]
+  },
+  "shockwave": {
+    "subtitle": "opusvsexe.subtitle.shockwave",
+    "sounds": [
+      "opusvsexe:shockwave"
+    ]
+  },
+  "exo_thrust": {
+    "subtitle": "opusvsexe.subtitle.exo_thrust",
+    "sounds": [
+      "opusvsexe:exo_thrust"
+    ]
+  },
+  "super_laser": {
+    "subtitle": "opusvsexe.subtitle.super_laser",
+    "sounds": [
+      "opusvsexe:super_laser"
+    ]
+  },
+  "radio_explosion": {
+    "subtitle": "opusvsexe.subtitle.radio_explosion",
+    "sounds": [
+      "opusvsexe:radio_explosion"
+    ]
+  },
+  "doom_eternal": {
+    "subtitle": "opusvsexe.subtitle.doom_eternal",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/doom_eternal",
+        "stream": true
+      }
+    ]
+  },
+  "doom_eternal_disc": {
+    "subtitle": "opusvsexe.subtitle.doom_eternal_disc",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/doom_eternal",
+        "stream": true
+      }
+    ]
+  }
+}

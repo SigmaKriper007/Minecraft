@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/orientable", "textures": {"top": "opusvsexe:block/reward_vault_top", "front": "opusvsexe:block/reward_vault_front_open", "side": "opusvsexe:block/reward_vault_side"}}

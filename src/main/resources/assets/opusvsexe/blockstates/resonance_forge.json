@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,lit=false": { "model": "opusvsexe:block/resonance_forge" },
+    "facing=north,lit=true": { "model": "opusvsexe:block/resonance_forge_lit" },
+    "facing=east,lit=false": { "model": "opusvsexe:block/resonance_forge", "y": 90 },
+    "facing=east,lit=true": { "model": "opusvsexe:block/resonance_forge_lit", "y": 90 },
+    "facing=south,lit=false": { "model": "opusvsexe:block/resonance_forge", "y": 180 },
+    "facing=south,lit=true": { "model": "opusvsexe:block/resonance_forge_lit", "y": 180 },
+    "facing=west,lit=false": { "model": "opusvsexe:block/resonance_forge", "y": 270 },
+    "facing=west,lit=true": { "model": "opusvsexe:block/resonance_forge_lit", "y": 270 }
+  }
+}

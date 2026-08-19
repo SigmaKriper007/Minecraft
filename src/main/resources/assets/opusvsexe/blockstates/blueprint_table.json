@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "opusvsexe:block/blueprint_table", "y": 0}, "facing=east": {"model": "opusvsexe:block/blueprint_table", "y": 90}, "facing=south": {"model": "opusvsexe:block/blueprint_table", "y": 180}, "facing=west": {"model": "opusvsexe:block/blueprint_table", "y": 270}}}

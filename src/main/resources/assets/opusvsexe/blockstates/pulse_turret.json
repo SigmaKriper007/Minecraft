@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "opusvsexe:block/pulse_turret", "y": 0}, "facing=east": {"model": "opusvsexe:block/pulse_turret", "y": 90}, "facing=south": {"model": "opusvsexe:block/pulse_turret", "y": 180}, "facing=west": {"model": "opusvsexe:block/pulse_turret", "y": 270}}}

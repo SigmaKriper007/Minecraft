@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "opusvsexe:block/stabilized_opus_block"
+    }
+  }
+}

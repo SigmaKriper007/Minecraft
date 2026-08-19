@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/orientable", "textures": {"top": "opusvsexe:block/command_terminal_top", "front": "opusvsexe:block/command_terminal_front", "side": "opusvsexe:block/command_terminal_side"}}

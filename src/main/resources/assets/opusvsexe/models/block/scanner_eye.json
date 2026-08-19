@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/orientable", "textures": {"top": "opusvsexe:block/scanner_eye_top", "front": "opusvsexe:block/scanner_eye_front", "side": "opusvsexe:block/scanner_eye_side"}}
