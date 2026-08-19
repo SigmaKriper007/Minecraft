@@ -1,0 +1,9 @@
+Эти три файла заменены и должны быть УДАЛЕНЫ из проекта,
+иначе будет конфликт (двойная регистрация клавиш и мёртвые вызовы):
+
+src/client/java/com/opus/client/ExoAbilityKeybind.java      -> заменён на ExoKeybinds.java
+src/client/java/com/opus/client/ExosuitRiderEffects.java    -> заменён на ExoInputHandler.java
+src/client/java/com/opus/client/mixin/CameraPilotMixin.java -> больше не нужен (пилот сидит на высоте головы рамы)
+
+CameraPilotMixin также убран из src/client/resources/opusvsexe.client.mixins.json
+(этот файл в архиве уже обновлён).

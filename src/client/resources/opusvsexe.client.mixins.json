@@ -9,8 +9,7 @@
 		"PlayerRendererMixin",
 		"ArmorStandRendererMixin",
 		"GameRendererMixin",
-		"MinecraftAttackMixin",
-		"CameraPilotMixin"
+		"MinecraftAttackMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

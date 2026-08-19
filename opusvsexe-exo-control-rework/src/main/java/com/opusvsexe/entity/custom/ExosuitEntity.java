@@ -245,48 +245,25 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
     }
 
     // ------------------------------------------------------------------
-    // AI: a parked suit is a machine, not a mob. It never fights on its own,
-    // and while a pilot is inside every goal is inert - otherwise the look
-    // goals fight the pilot for head/body rotation and steering jitters.
-    // (Mob#serverAiStep is final in these mappings, so the goals themselves
-    // carry the "piloted" gate.)
+    // AI: a parked suit is a machine, not a mob. It never fights on its own.
     // ------------------------------------------------------------------
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this) {
-            @Override
-            public boolean canUse() {
-                return !ExosuitEntity.this.isVehicle() && super.canUse();
-            }
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 12.0F));
+        this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
+    }
 
-            @Override
-            public boolean canContinueToUse() {
-                return !ExosuitEntity.this.isVehicle() && super.canContinueToUse();
-            }
-        });
-        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 12.0F) {
-            @Override
-            public boolean canUse() {
-                return !ExosuitEntity.this.isVehicle() && super.canUse();
-            }
-
-            @Override
-            public boolean canContinueToUse() {
-                return !ExosuitEntity.this.isVehicle() && super.canContinueToUse();
-            }
-        });
-        this.goalSelector.addGoal(9, new RandomLookAroundGoal(this) {
-            @Override
-            public boolean canUse() {
-                return !ExosuitEntity.this.isVehicle() && super.canUse();
-            }
-
-            @Override
-            public boolean canContinueToUse() {
-                return !ExosuitEntity.this.isVehicle() && super.canContinueToUse();
-            }
-        });
+    @Override
+    protected void serverAiStep() {
+        if (this.isVehicle()) {
+            // The pilot owns rotation and movement. Running goals, look control
+            // or navigation here is exactly what made steering jitter before.
+            this.getNavigation().stop();
+            return;
+        }
+        super.serverAiStep();
     }
 
     @Override
@@ -321,12 +298,6 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         }
         if (this.attackTicks <= 0 && this.isAttacking()) {
             this.setFlag(FLAG_ATTACKING, false);
-        }
-
-        if (this.isVehicle()) {
-            // The pilot owns movement. Navigation has nothing to do here:
-            // a half-built path is exactly what made steering jitter before.
-            this.getNavigation().stop();
         }
 
         this.tickCooldowns();
