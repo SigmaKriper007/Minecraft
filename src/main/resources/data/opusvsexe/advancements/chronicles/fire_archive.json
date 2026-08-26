@@ -1,0 +1,29 @@
+{
+  "parent": "opusvsexe:chronicles/root",
+  "display": {
+    "icon": {
+      "item": "opusvsexe:trophy_diablo"
+    },
+    "title": {
+      "translate": "advancement.opusvsexe.chronicles.fire.title"
+    },
+    "description": {
+      "translate": "advancement.opusvsexe.chronicles.fire.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fire_slime": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_fire_slime"] }] } },
+    "lava_golem": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_lava_golem"] }] } },
+    "diablo": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_diablo"] }] } },
+    "ember_slime": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_ember_slime"] }] } },
+    "obsidian_golem": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_obsidian_golem"] }] } },
+    "flame_demon": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_flame_demon"] }] } }
+  },
+  "rewards": {
+    "experience": 250
+  }
+}

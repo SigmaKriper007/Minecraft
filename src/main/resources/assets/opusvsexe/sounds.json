@@ -53,6 +53,36 @@
       "opusvsexe:radio_explosion"
     ]
   },
+  "exo_shield": {
+    "subtitle": "opusvsexe.subtitle.exo_shield",
+    "sounds": [
+      "opusvsexe:exo_shield"
+    ]
+  },
+  "exo_laser": {
+    "subtitle": "opusvsexe.subtitle.exo_laser",
+    "sounds": [
+      "opusvsexe:exo_laser"
+    ]
+  },
+  "exo_slam": {
+    "subtitle": "opusvsexe.subtitle.exo_slam",
+    "sounds": [
+      "opusvsexe:exo_slam"
+    ]
+  },
+  "exo_ultra": {
+    "subtitle": "opusvsexe.subtitle.exo_ultra",
+    "sounds": [
+      "opusvsexe:exo_ultra"
+    ]
+  },
+  "exo_extra": {
+    "subtitle": "opusvsexe.subtitle.exo_extra",
+    "sounds": [
+      "opusvsexe:exo_extra"
+    ]
+  },
   "doom_eternal": {
     "subtitle": "opusvsexe.subtitle.doom_eternal",
     "sounds": [
@@ -68,6 +98,499 @@
       {
         "name": "opusvsexe:music/doom_eternal",
         "stream": true
+      }
+    ]
+  },
+  "haiku_summon": {
+    "subtitle": "opusvsexe.subtitle.haiku_summon",
+    "sounds": [
+      "opusvsexe:shockwave"
+    ]
+  },
+  "boss_roar": {
+    "subtitle": "opusvsexe.subtitle.boss_roar",
+    "sounds": [
+      "opusvsexe:boss_roar"
+    ]
+  },
+  "boss_step": {
+    "subtitle": "opusvsexe.subtitle.boss_step",
+    "sounds": [
+      "opusvsexe:boss_step"
+    ]
+  },
+  "boss_punch": {
+    "subtitle": "opusvsexe.subtitle.boss_punch",
+    "sounds": [
+      "opusvsexe:boss_punch"
+    ]
+  },
+  "boss_turret_shot": {
+    "subtitle": "opusvsexe.subtitle.boss_turret_shot",
+    "sounds": [
+      "opusvsexe:boss_turret_shot"
+    ]
+  },
+  "boss_orbital_warn": {
+    "subtitle": "opusvsexe.subtitle.boss_orbital_warn",
+    "sounds": [
+      "opusvsexe:boss_orbital_warn"
+    ]
+  },
+  "boss_laser": {
+    "subtitle": "opusvsexe.subtitle.boss_laser",
+    "sounds": [
+      "opusvsexe:boss_laser"
+    ]
+  },
+  "boss_ring_burst": {
+    "subtitle": "opusvsexe.subtitle.boss_ring_burst",
+    "sounds": [
+      "opusvsexe:boss_ring_burst"
+    ]
+  },
+  "boss_teleport": {
+    "subtitle": "opusvsexe.subtitle.boss_teleport",
+    "sounds": [
+      "opusvsexe:boss_teleport"
+    ]
+  },
+  "boss_core_hit": {
+    "subtitle": "opusvsexe.subtitle.boss_core_hit",
+    "sounds": [
+      "opusvsexe:boss_core_hit"
+    ]
+  },
+  "boss_deflect": {
+    "subtitle": "opusvsexe.subtitle.boss_deflect",
+    "sounds": [
+      "opusvsexe:boss_deflect"
+    ]
+  },
+  "boss_phase_shift": {
+    "subtitle": "opusvsexe.subtitle.boss_phase_shift",
+    "sounds": [
+      "opusvsexe:boss_phase_shift"
+    ]
+  },
+  "boss_slam": {
+    "subtitle": "opusvsexe.subtitle.boss_slam",
+    "sounds": [
+      "opusvsexe:boss_slam"
+    ]
+  },
+  "boss_explosion": {
+    "subtitle": "opusvsexe.subtitle.boss_explosion",
+    "sounds": [
+      "opusvsexe:boss_explosion"
+    ]
+  },
+  "haiku_omega_death": {
+    "subtitle": "opusvsexe.subtitle.haiku_omega_death",
+    "sounds": [
+      {
+        "name": "opusvsexe:haiku_omega_death",
+        "volume": 0.9,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "omega_ring_wave": {
+    "subtitle": "opusvsexe.subtitle.omega_ring_wave",
+    "sounds": [
+      {
+        "name": "opusvsexe:omega_ring_wave",
+        "volume": 1.2,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "omega_slash": {
+    "subtitle": "opusvsexe.subtitle.omega_slash",
+    "sounds": [
+      {
+        "name": "opusvsexe:omega_slash",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "sky_laser_warn": {
+    "subtitle": "opusvsexe.subtitle.sky_laser_warn",
+    "sounds": [
+      {
+        "name": "opusvsexe:sky_laser_warn",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "sky_laser_omega": {
+    "subtitle": "opusvsexe.subtitle.sky_laser_omega",
+    "sounds": [
+      {
+        "name": "opusvsexe:sky_laser_omega",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "altar_heart_loop": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "opusvsexe:altar_heart_loop",
+        "stream": true
+      }
+    ]
+  },
+  "menu_music": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/menu_music",
+        "stream": true
+      }
+    ]
+  },
+  "fire_equip": {
+    "subtitle": "opusvsexe.subtitle.fire_equip",
+    "sounds": [
+      {
+        "name": "opusvsexe:fire_equip"
+      }
+    ]
+  },
+  "fire_charge": {
+    "subtitle": "opusvsexe.subtitle.fire_charge",
+    "sounds": [
+      {
+        "name": "opusvsexe:fire_charge"
+      }
+    ]
+  },
+  "fireball_launch": {
+    "subtitle": "opusvsexe.subtitle.fireball_launch",
+    "sounds": [
+      {
+        "name": "opusvsexe:fireball_launch"
+      }
+    ]
+  },
+  "fire_explode": {
+    "subtitle": "opusvsexe.subtitle.fire_explode",
+    "sounds": [
+      {
+        "name": "opusvsexe:fire_explode"
+      }
+    ]
+  },
+  "demon_roar": {
+    "subtitle": "opusvsexe.subtitle.demon_roar",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_roar"
+      }
+    ]
+  },
+  "demon_aura": {
+    "subtitle": "opusvsexe.subtitle.demon_aura",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_aura"
+      }
+    ]
+  },
+  "demon_hurt": {
+    "subtitle": "opusvsexe.subtitle.demon_hurt",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_hurt"
+      }
+    ]
+  },
+  "demon_death": {
+    "subtitle": "opusvsexe.subtitle.demon_death",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_death"
+      }
+    ]
+  },
+  "demon_hit": {
+    "subtitle": "opusvsexe.subtitle.demon_hit",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_hit"
+      }
+    ]
+  },
+  "slime_charge": {
+    "subtitle": "opusvsexe.subtitle.slime_charge",
+    "sounds": [
+      {
+        "name": "opusvsexe:slime_charge"
+      }
+    ]
+  },
+  "slime_explode": {
+    "subtitle": "opusvsexe.subtitle.slime_explode",
+    "sounds": [
+      {
+        "name": "opusvsexe:slime_explode"
+      }
+    ]
+  },
+  "golem_step": {
+    "subtitle": "opusvsexe.subtitle.golem_step",
+    "sounds": [
+      {
+        "name": "opusvsexe:golem_step"
+      }
+    ]
+  },
+  "golem_hurt": {
+    "subtitle": "opusvsexe.subtitle.golem_hurt",
+    "sounds": [
+      {
+        "name": "opusvsexe:golem_hurt"
+      }
+    ]
+  },
+  "golem_attack": {
+    "subtitle": "opusvsexe.subtitle.golem_attack",
+    "sounds": [
+      {
+        "name": "opusvsexe:golem_attack"
+      }
+    ]
+  },
+  "portal_ignite": {
+    "subtitle": "opusvsexe.subtitle.portal_ignite",
+    "sounds": [
+      {
+        "name": "opusvsexe:portal_ignite"
+      }
+    ]
+  },
+  "ember_equip": {
+    "subtitle": "opusvsexe.subtitle.ember_equip",
+    "sounds": [
+      {
+        "name": "opusvsexe:fire_equip"
+      }
+    ]
+  },
+  "ember_charge": {
+    "subtitle": "opusvsexe.subtitle.ember_charge",
+    "sounds": [
+      {
+        "name": "opusvsexe:fire_charge"
+      }
+    ]
+  },
+  "ember_fireball_launch": {
+    "subtitle": "opusvsexe.subtitle.ember_fireball_launch",
+    "sounds": [
+      {
+        "name": "opusvsexe:fireball_launch"
+      }
+    ]
+  },
+  "ember_explode": {
+    "subtitle": "opusvsexe.subtitle.ember_explode",
+    "sounds": [
+      {
+        "name": "opusvsexe:fire_explode"
+      }
+    ]
+  },
+  "flame_demon_roar": {
+    "subtitle": "opusvsexe.subtitle.flame_demon_roar",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_roar"
+      }
+    ]
+  },
+  "flame_demon_aura": {
+    "subtitle": "opusvsexe.subtitle.flame_demon_aura",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_aura"
+      }
+    ]
+  },
+  "flame_demon_hurt": {
+    "subtitle": "opusvsexe.subtitle.flame_demon_hurt",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_hurt"
+      }
+    ]
+  },
+  "flame_demon_death": {
+    "subtitle": "opusvsexe.subtitle.flame_demon_death",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_death"
+      }
+    ]
+  },
+  "flame_demon_hit": {
+    "subtitle": "opusvsexe.subtitle.flame_demon_hit",
+    "sounds": [
+      {
+        "name": "opusvsexe:demon_hit"
+      }
+    ]
+  },
+  "ember_slime_charge": {
+    "subtitle": "opusvsexe.subtitle.ember_slime_charge",
+    "sounds": [
+      {
+        "name": "opusvsexe:slime_charge"
+      }
+    ]
+  },
+  "ember_slime_explode": {
+    "subtitle": "opusvsexe.subtitle.ember_slime_explode",
+    "sounds": [
+      {
+        "name": "opusvsexe:slime_explode"
+      }
+    ]
+  },
+  "obsidian_golem_step": {
+    "subtitle": "opusvsexe.subtitle.obsidian_golem_step",
+    "sounds": [
+      {
+        "name": "opusvsexe:golem_step"
+      }
+    ]
+  },
+  "obsidian_golem_hurt": {
+    "subtitle": "opusvsexe.subtitle.obsidian_golem_hurt",
+    "sounds": [
+      {
+        "name": "opusvsexe:golem_hurt"
+      }
+    ]
+  },
+  "obsidian_golem_attack": {
+    "subtitle": "opusvsexe.subtitle.obsidian_golem_attack",
+    "sounds": [
+      {
+        "name": "opusvsexe:golem_attack"
+      }
+    ]
+  },
+  "diablo_death": {
+    "subtitle": "opusvsexe.subtitle.diablo_death",
+    "sounds": [
+      {
+        "name": "opusvsexe:diablo_death",
+        "volume": 1.1
+      }
+    ]
+  },
+  "diablo_theme": {
+    "category": "music",
+    "subtitle": "opusvsexe.subtitle.diablo_theme",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/diablo_theme",
+        "stream": true
+      }
+    ]
+  },
+  "firebiom_sound": {
+    "subtitle": "opusvsexe.subtitle.firebiom_sound",
+    "sounds": [
+      {
+        "name": "opusvsexe:firebiom_sound",
+        "stream": true
+      }
+    ]
+  },
+  "portal_sound": {
+    "subtitle": "opusvsexe.subtitle.portal_sound",
+    "sounds": [
+      {
+        "name": "opusvsexe:portal_sound",
+        "stream": true
+      }
+    ]
+  },
+  "lost_long": {
+    "subtitle": "opusvsexe.subtitle.lost_long",
+    "sounds": [
+      {
+        "name": "opusvsexe:lost_long"
+      }
+    ]
+  },
+  "try_harder": {
+    "subtitle": "opusvsexe.subtitle.try_harder",
+    "sounds": [
+      {
+        "name": "opusvsexe:try_harder"
+      }
+    ]
+  },
+  "your_soul": {
+    "subtitle": "opusvsexe.subtitle.your_soul",
+    "sounds": [
+      {
+        "name": "opusvsexe:your_soul"
+      }
+    ]
+  },
+  "angel_boy_theme": {
+    "subtitle": "opusvsexe.subtitle.angel_boy_theme",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/angel_boy_theme",
+        "stream": true
+      }
+    ],
+    "category": "music"
+  },
+  "enderman_theme": {
+    "subtitle": "opusvsexe.subtitle.enderman_theme",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/enderman_theme",
+        "stream": true
+      }
+    ],
+    "category": "music"
+  },
+  "japanese_fight": {
+    "subtitle": "opusvsexe.subtitle.japanese_fight",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/japanese_fight",
+        "stream": true
+      }
+    ],
+    "category": "music"
+  },
+  "young_samurai_defeated": {
+    "subtitle": "opusvsexe.subtitle.young_samurai_defeated",
+    "sounds": [
+      {
+        "name": "opusvsexe:music/young_samurai_defeated",
+        "stream": true
+      }
+    ],
+    "category": "music"
+  },
+  "mossbound_enderman_death": {
+    "subtitle": "opusvsexe.subtitle.mossbound_enderman_death",
+    "sounds": [
+      {
+        "name": "opusvsexe:mossbound_enderman_death"
       }
     ]
   }

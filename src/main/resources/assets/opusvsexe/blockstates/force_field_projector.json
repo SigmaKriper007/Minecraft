@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "opusvsexe:block/force_field_projector", "y": 0},
+    "facing=south": {"model": "opusvsexe:block/force_field_projector", "y": 180},
+    "facing=west": {"model": "opusvsexe:block/force_field_projector", "y": 270},
+    "facing=east": {"model": "opusvsexe:block/force_field_projector", "y": 90}
+  }
+}

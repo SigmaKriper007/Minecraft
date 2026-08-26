@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "opusvsexe:fire_helmet" },
+    { "item": "opusvsexe:fire_essence" },
+    { "item": "opusvsexe:fire_essence" },
+    { "item": "opusvsexe:fire_essence" },
+    { "item": "opusvsexe:fire_essence" }
+  ],
+  "result": { "item": "opusvsexe:ember_helmet" }
+}

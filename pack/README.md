@@ -1,84 +1,98 @@
-# Opus vs EXE - Structure Rework (Fabric 1.20.1)
+# Opus vs EXE — Datapack структур (Fabric 1.20.1)
 
-Все 6 структур переработаны с нуля по промтам из `opus_vsexe_structure_prompts_ru.md`.
-Это готовый datapack-слой мода: положи содержимое `data/` в
-`src/main/resources/data/` своего мода (namespace уже `opusvsexe`).
+Актуальный datapack-слой мода (`namespace: opusvsexe`). Каждая структура — **одна
+цельная NBT-часть** (без хрупких jigsaw-сборок), генерируется Python-генераторами
+(`regen_*.py` в корне репозитория, общий каркас `structure_toolkit.py`).
 
-## Что внутри
+Содержимое папки `data/` продублировано в `src/main/resources/data/` мода.
 
-- 27 jigsaw-шаблонов `.nbt`, собранных поблочно (не скопированных)
-- 6 `worldgen/structure` + 6 `structure_set` с уникальными salt и spacing
-- 17 `template_pool`, 6 `processor_list` на выветривание
-- 25 лут-таблиц по комнатам, а не одна общая
-- биом-теги и структур-теги для `/locate`
+## Структуры
 
-## Структуры и их испытания
+| Структура | Тир | Габарит NBT | Биомы (тег) | Мобы | Испытание | Мотив |
+|---|---|---|---|---|---|---|
+| kimi_laboratory | T1 | 100×30×48 | `has_kimi_laboratory` (#is_overworld) | Husk, Scout | «Каскад памяти» (keypad×4) + энергодверь | подземная лаба-склеп |
+| coddy_workshop | T1 | 96×22×56 | `has_coddy_workshop` | Husk, Scout | «Последняя смена» (keypad×4 у печей) + тир | кузня-полуразрушенный цех |
+| data_spire | T2 | 26×96×26 | `has_data_spire` | Scout, Enforcer | «Перегрузка шпиля» (keypad×4) | вертикальная башня-сервер |
+| trial_grounds | T2 | 96×24×64 | `has_trial_grounds` | Husk/Scout/Enforcer (волны) | «Эскалация» (keypad×3 + живые волны) + ложные хранилища | военный полигон |
+| abandoned_city | T2–3 | 112×68×112 | `has_abandoned_city` | толпы Husk/Scout, Enforcer, «Синдикат»×3 | «Реликвии города» (keypad×4, подсказки по кварталам) | руины мегаполиса |
+| frontier_fortress | T3 | 72×48×72 | `has_frontier_fortress` | Enforcer, Warden (мин.-босс) | «Гарнизон» (keypad×4, порядок казематов) | бастион с keep |
+| haiku_citadel | T4 | 80×56×80 | `has_haiku_citadel` | Warden, Titan, элиты | Пасть→Неф→Якоря→Ядро | храм-мозг ИИ |
+| eternal_colosseum | Финальный | 129×72×129 | `has_eternal_colosseum` | Haiku-Ω | призыв Ядра | Колизей с алтарём |
+| paradise_island | Отдельная ветка | 97×72×97 | `has_paradise_island` | Sunfinch, Cloud Grazer, Paradise Wyvern, Angel Boy | небесная экология + трёхфазный суд | парящий сад и Парфенон |
+| moon_fountain | Отдельная ветка | 49×22×49 | `has_moon_fountain` | Shade Spiderling, Gloom Broodmother, Moonwing Bat, Mossbound Enderman | пробуждение босса + ритуал 4 Rootbound Eye + Moonflower Heart | лунный фонтан Тёмного леса |
+| survivor_settlement | Поселения | 91×31×91 | `has_survivor_settlement` | Survivor ×12 | торговля четырьмя маршрутными компасами, защита от Haiku при оружии Opus | укреплённая живая деревня |
+| japanese_settlement | Поселения | 97×36×97 | `has_japanese_settlement` | Black Ninja ×8, Samurai ×4, Young Samurai ×1 | дымный рывок, длинный выпад, двухфазный бой с Кровавым цветком | замок с сакурой, рекой, мостом и тории |
 
-| Структура | Кусков | Испытание | Главный моб |
-|---|---|---|---|
-| kimi_laboratory | 5 | Каскадный сбой (коридор, волны спереди и сзади) | Husk |
-| coddy_workshop | 5 | Последняя смена (осада, есть путь отступления) | Enforcer |
-| data_spire | 2 | Перегрузка канала (спуск вниз на время) | Scout |
-| trial_grounds | 3 | Протокол эскалации, 4 фазы | Elite Warden |
-| frontier_fortress | 6 | Отключение гарнизона: 3 узла, потом реактор | Warden Commander |
-| haiku_citadel | 6 | 3 предбоссовых испытания + арена Омеги | Haiku-Ω |
+`/locate structure opusvsexe:<id>` — id совпадает с именем в таблице.
 
-Каждая структура имеет свой ритм: лаба — спуск, шпиль — подъём и побег вниз,
-полигон — удержание арены, крепость — штурм с отключением узлов, цитадель — марш.
+## Блоки, используемые шаблонами
 
-## Важно: блоки и мобы, которые должны существовать в моде
+Все есть в реестре мода; отсутствующего блока не будет — генерация просто пропустит его.
 
-Шаблоны ссылаются на кастомные блоки из промтов. Если блока нет в регистре,
-Minecraft просто пропустит его при генерации (дыра в геометрии), поэтому сначала
-зарегистрируй их (или замени на ванильные в `structures/*.nbt`).
+### Декор (простой Block, без свойств)
+`cracked_lab_concrete`, `lab_floor_grate`, `opus_containment_glass`, `memory_glass`,
+`scorched_concrete`, `oil_stain`, `fortress_plating`, `omega_frame`, `citadel_vein`,
+`tank_trap`, `memory_sludge`, `marsh_filter`, `colosseum_concrete`, `colosseum_wall`,
+`reinforced_opus_block`, `haiku_amber_block` (бедрок-прочность, свет 10), `pulsing_core`,
+`core_crate`, `broken_exo_hull`, `exo_assembly_frame`, `raw/stabilized/resonant/core_opus_block`,
+`opus_ore`; ваниль: `deepslate_tiles/bricks`, `polished_blackstone`, `obsidian`, `lava`, `end_rod`.
 
-### Декор (простой Block)
-cracked_lab_concrete, lab_floor_grate, opus_containment_glass, scorched_concrete, oil_stain,
-fortress_plating, memory_glass, omega_frame, citadel_vein, tank_trap, data_conduit, memory_cable,
-signal_panel, pulsing_core, raw_opus_block, stabilized_opus_block, resonant_opus_block,
-core_opus_block, broken_exo_hull, exo_assembly_frame, welding_bench, core_crate, memory_sludge
+### С facing / питанием (OpusHorizontal / PoweredHorizontal)
+`data_conduit`, `memory_cable`, `signal_panel`, `welding_bench`, `hazard_emitter`,
+`dead_terminal`, `flickering_terminal`, `blueprint_table`, `broken_resonance_forge`,
+`katana_stand`, `scanner_eye`, `pulse_turret`, `memory_console` (facing+used);
+`wave_terminal`, `command_terminal`, `force_field_projector` (facing+powered).
 
-### С facing (HorizontalFacingBlock)
-dead_terminal, flickering_terminal, blueprint_table, broken_resonance_forge, katana_stand,
-scanner_eye, pulse_turret, wave_terminal, command_terminal, memory_console
+### Переключатели (ToggleBlock)
+`arena_gate`, `sealed_bulkhead`, `sealed_hatch` (`facing`+`open`);
+`phase_gate`, `shield_node`, `gravity_anchor`, `combat_beacon` (`facing`+`active`).
+Взаимодействие — клик (тумблер), у `active` — свет при включении.
 
-### С boolean-свойством
-arena_gate/phase_gate/sealed_bulkhead (`open`), shield_node/gravity_anchor/combat_beacon (`active`),
-dormant_spawner (`active`), sealed_hatch, hazard_emitter, marsh_filter, reward_vault (`open`)
+### Энергобарьеры
+`energy_barrier` / `energy_barrier_red` / `energy_barrier_blue` (`facing`, панели, неразрушимы),
+`energy_beam` (`axis`, луч), `phased_barrier` (`facing`+`active`, красстоун-сигнал ОТКРЫВАЕТ).
 
-### Block entity NBT в шаблонах
-- `opusvsexe:dormant_spawner` -> {entity_type, spawn_count, activation_range, delay, max_nearby, persistent}
-- `opusvsexe:memory_console` -> {fragment: "opusvsexe:lab_1" ...} тексты фрагментов из промтов
-- `opusvsexe:trial_trigger` -> {trial_id, reset_ticks}: lab_cascade, workshop_last_shift,
-  spire_overload, trial_escalation, fortress_garrison, citadel_open_maw,
-  citadel_no_looking_down, citadel_drop_anchors, citadel_omega
+### Block entity + испытания
+- `trial_trigger` (`triggered`): шаг/красстоун → разблокирует `reward_vault` в радиусе 16,
+  сигнал 15 на 20т. NBT: `cooldown`.
+- `reward_vault` (`open`): запертым выводит сообщение; после unlock — контейнер 27 слотов,
+  лут из `LootTable`. NBT: `LootTable`.
+- `dormant_spawner` (`active`): спавнит моба из NBT `entity_id` (интервал 120т, до 4 рядом).
+  Поведение включается `last_active=true` (для живых волн).
+- `resonance_forge` (`facing`+`lit`): крафт Опус-заготовок RAW→STAB→RES→CORE (огниво/зажигалка).
+- `memory_console` (`facing`+`used`): показывает текст NBT `memory_text` (подсказки пазлов).
+- `moon_fountain_core`: хранит победу, UUID босса и 100-тиковый ритуал; `rootbound_pedestal` (`charged`) принимает/возвращает один Rootbound Eye.
+- `altar_heart` (`activated`): призыв Haiku-Ω (по Ядру Haiku).
 
-### Мобы в спавнерах
-opusvsexe:haiku_husk, haiku_scout, haiku_enforcer, haiku_elite_warden, haiku_titan_frame, haiku_omega
+### Пазл-блоки (задача 19)
+- `sequence_keypad` (`facing`+`solved`): «память-порядок». NBT: `puzzle_id` (группа),
+  `order` (позиция в последовательности). Клик: правильный шаг → solved; ошибка → сброс всей
+  группы (lightness) + урон; при решении последней — разблокирует `reward_vault` в r16.
+- `energy_relay` (`powered`): красстоун-проводник. Проведение питания от источника/рычага
+  по цепочке реле к `phased_barrier`/`trial_trigger` («маршрут энергии»). Передаёт сигнал 15.
 
-### Предметы в луте
-raw_opus, stabilized_opus, resonant_opus, core_opus, memory_fragment, katana_op,
-blueprint_exo1..5, blueprint_forge, exo_servo, exo_plating, exo_frame_part, exo5_component,
-exo_overcharge_cell, haiku_circuit, signal_scrap, warden_core, enforcer_core,
-haiku_command_sigil, archive_key, lab_keycard, coddy_notes
+## Мобы в спавнерах (`dormant_spawner.entity_id`)
+`opusvsexe:haiku_1_5`, `haiku_2` (Scout), `haiku_3` (Enforcer), `haiku_4` (Warden),
+`haiku_5` (Titan), `haiku_omega`; (дроны и EXO — для других сцен).
 
-Быстрая замена несуществующего на ваниль: правка loot_tables через sed/IDE, геометрия не трогается.
+## Лут-таблицы
+`chests/<structure>/*.json`. Пул внутри структуры задаётся через
+`LootTable` у `reward_vault`/`chest`. Лестница по тирам:
+T1 → raw/stabilized_opus; T2 → stabilized/resonant_opus; T3 → resonant/core_opus;
+T4 → core_opus + катана-ОП/ядро Haiku. Памятные фрагменты по номерам лора (1–15).
 
-## Проверка в игре
-
+## Порядок проверки в игре
+```
+/locate structure opusvsexe:abandoned_city
 /locate structure opusvsexe:kimi_laboratory
 /locate structure opusvsexe:coddy_workshop
 /locate structure opusvsexe:data_spire
 /locate structure opusvsexe:trial_grounds
 /locate structure opusvsexe:frontier_fortress
 /locate structure opusvsexe:haiku_citadel
-
-Поштучно посмотреть любой кусок: structure block -> LOAD -> opusvsexe:kimi_laboratory/research
-
-## Заметки по геометрии
-
-- Все стыки jigsaw — горизонтальные (надёжнее вертикальных).
-- Шпиль Данных — один шаблон 21x48x21 (лимит ванили 48), а не стопка сегментов.
-- Лаборатория ставится на Y от -14 до 18, люк может быть чуть под грунтом — так и задумано.
-- Цитадель: spacing 140 / separation 90, одна на большой регион.
-- Выветривание идёт дважды: внутри шаблона и через processor_list.
+/locate structure opusvsexe:eternal_colosseum
+/locate structure opusvsexe:moon_fountain
+/locate structure opusvsexe:survivor_settlement
+/locate structure opusvsexe:japanese_settlement
+```
+Пазл-блоки (sequence_keypad/energy_relay) удобно тестить structure-stick'ом на предметной машине.

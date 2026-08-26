@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SMS",
+    "ILI",
+    "SMS"
+  ],
+  "key": {
+    "S": {
+      "item": "opusvsexe:shade_silk"
+    },
+    "M": {
+      "item": "opusvsexe:moonwing_membrane"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "opusvsexe:gloomwood_log"
+    }
+  },
+  "result": {
+    "item": "opusvsexe:briarweave",
+    "count": 2
+  }
+}

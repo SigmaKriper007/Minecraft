@@ -1,9 +1,28 @@
-# OpusVsExe
+# Opus vs EXE
 
-## Setup
+A Minecraft 1.20.1 Fabric adventure mod about memory-metal, the Great War, Haiku machines, parallel realms, living biomes, settlements, bosses, equipment progression, and a 26-trophy final archive.
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+## Player documentation
 
-## License
+Open [`docs/index.html`](docs/index.html) for the illustrated, searchable field guide. It covers:
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+- story and progression routes;
+- structures, realms, creatures, and boss mechanics;
+- equipment abilities, cooldowns, and resurrection rituals;
+- the complete generated recipe book;
+- the full localized item/block compendium;
+- all trophies and the final completion advancement.
+
+Regenerate its live catalogs after resource changes:
+
+```sh
+python3 docs/generate_catalog.py
+```
+
+## Build
+
+```sh
+JAVA_HOME=/path/to/jdk17 ./gradlew build
+```
+
+The remapped mod JAR is written to `build/libs/`.

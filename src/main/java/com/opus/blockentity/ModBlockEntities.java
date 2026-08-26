@@ -5,6 +5,7 @@ import com.opus.block.DormantSpawnerBlock;
 import com.opus.block.MemoryConsoleBlock;
 import com.opus.block.ResonanceForgeBlock;
 import com.opus.block.RewardVaultBlock;
+import com.opus.block.SequenceKeypadBlock;
 import com.opus.block.TrialTriggerBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -30,6 +31,14 @@ public class ModBlockEntities {
     public static final BlockEntityType<ResonanceForgeBlockEntity> RESONANCE_FORGE = Registry.register(
         BuiltInRegistries.BLOCK_ENTITY_TYPE, OpusVsExe.id("resonance_forge"),
         BlockEntityType.Builder.of(ResonanceForgeBlockEntity::new, com.opus.registry.ModBlocks.RESONANCE_FORGE).build(null));
+
+    public static final BlockEntityType<AltarHeartBlockEntity> ALTAR_HEART = Registry.register(
+        BuiltInRegistries.BLOCK_ENTITY_TYPE, OpusVsExe.id("altar_heart"),
+        BlockEntityType.Builder.of(AltarHeartBlockEntity::new, com.opus.registry.ModBlocks.ALTAR_HEART).build(null));
+
+    public static final BlockEntityType<SequenceKeypadBlockEntity> SEQUENCE_KEYPAD = Registry.register(
+        BuiltInRegistries.BLOCK_ENTITY_TYPE, OpusVsExe.id("sequence_keypad"),
+        BlockEntityType.Builder.of(SequenceKeypadBlockEntity::new, com.opus.registry.ModBlocks.SEQUENCE_KEYPAD).build(null));
 
     public static void init() {
     }

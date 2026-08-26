@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["  D", " D ", "K  "],
+  "key": { "D": { "item": "minecraft:diamond" }, "K": { "item": "opusvsexe:katana" } },
+  "result": { "item": "opusvsexe:long_katana" }
+}

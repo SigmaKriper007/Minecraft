@@ -1,0 +1,71 @@
+{
+  "parent": "opusvsexe:chronicles/paradise_archive",
+  "display": {
+    "icon": {
+      "item": "opusvsexe:trophy_mossbound_enderman"
+    },
+    "title": {
+      "translate": "advancement.opusvsexe.chronicles.dark_forest.title"
+    },
+    "description": {
+      "translate": "advancement.opusvsexe.chronicles.dark_forest.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shade_spiderling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_shade_spiderling"
+            ]
+          }
+        ]
+      }
+    },
+    "gloom_broodmother": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_gloom_broodmother"
+            ]
+          }
+        ]
+      }
+    },
+    "moonwing_bat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_moonwing_bat"
+            ]
+          }
+        ]
+      }
+    },
+    "mossbound_enderman": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_mossbound_enderman"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 150
+  }
+}

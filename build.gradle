@@ -14,9 +14,17 @@ repositories {
 loom {
 	splitEnvironmentSourceSets()
 
+	// Пропуск dev-селектора QA: `./gradlew runServer -Dopus.qa.only=39`
+	// запускает сфокусированный контрактный проб на выделенном сервере.
+	def qaOnly = System.getProperty("opus.qa.only", "")
 	runs {
 		client {
 			vmArg "-Xmx4G"
+			if (qaOnly) vmArg "-Dopus.qa.only=$qaOnly"
+		}
+		server {
+			vmArg "-Xmx4G"
+			if (qaOnly) vmArg "-Dopus.qa.only=$qaOnly"
 		}
 	}
 

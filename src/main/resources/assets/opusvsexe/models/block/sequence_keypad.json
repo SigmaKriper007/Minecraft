@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/orientable", "textures": {"top": "opusvsexe:block/signal_panel", "front": "opusvsexe:block/pulsing_core", "side": "opusvsexe:block/dead_terminal_side"}}

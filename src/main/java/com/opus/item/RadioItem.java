@@ -51,7 +51,7 @@ public class RadioItem extends Item {
                 explosion.setPos(pos);
                 explosion.setShooter(player.getUUID());
                 level.addFreshEntity(explosion);
-                level.playSound(null, pos.x, pos.y, pos.z, ModSounds.RADIO_EXPLOSION, SoundSource.PLAYERS, 2.5F, 1.0F);
+                level.playSound(null, pos.x, pos.y, pos.z, ModSounds.RADIO_EXPLOSION, SoundSource.PLAYERS, 1.0F, 1.0F);
                 player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
             }
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);

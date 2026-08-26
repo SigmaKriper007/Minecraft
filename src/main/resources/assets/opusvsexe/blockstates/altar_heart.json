@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "activated=false": {
+      "model": "opusvsexe:block/altar_heart"
+    },
+    "activated=true": {
+      "model": "opusvsexe:block/altar_heart"
+    }
+  }
+}

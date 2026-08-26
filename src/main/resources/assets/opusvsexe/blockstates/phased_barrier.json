@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,active=true": {"model": "opusvsexe:block/phased_barrier", "y": 0},
+    "facing=south,active=true": {"model": "opusvsexe:block/phased_barrier", "y": 180},
+    "facing=west,active=true": {"model": "opusvsexe:block/phased_barrier", "y": 270},
+    "facing=east,active=true": {"model": "opusvsexe:block/phased_barrier", "y": 90},
+    "facing=north,active=false": {"model": "opusvsexe:block/phased_barrier", "y": 0},
+    "facing=south,active=false": {"model": "opusvsexe:block/phased_barrier", "y": 180},
+    "facing=west,active=false": {"model": "opusvsexe:block/phased_barrier", "y": 270},
+    "facing=east,active=false": {"model": "opusvsexe:block/phased_barrier", "y": 90}
+  }
+}

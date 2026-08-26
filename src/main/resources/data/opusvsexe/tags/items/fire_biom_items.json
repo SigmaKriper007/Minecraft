@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "opusvsexe:fire_soil",
+    "opusvsexe:magma_crust",
+    "opusvsexe:ash_block",
+    "opusvsexe:ember_log",
+    "opusvsexe:ember_leaves",
+    "opusvsexe:ember_sapling",
+    "opusvsexe:fire_vine",
+    "opusvsexe:fire_bean",
+    "opusvsexe:crimson_ice",
+    "opusvsexe:fire_portal",
+    "opusvsexe:fire_essence",
+    "opusvsexe:fire_sword",
+    "opusvsexe:fire_pickaxe",
+    "opusvsexe:fire_axe",
+    "opusvsexe:fire_shovel",
+    "opusvsexe:fire_hoe",
+    "opusvsexe:fire_helmet",
+    "opusvsexe:fire_chestplate",
+    "opusvsexe:fire_leggings",
+    "opusvsexe:fire_boots",
+    "opusvsexe:ember_helmet",
+    "opusvsexe:ember_chestplate",
+    "opusvsexe:ember_leggings",
+    "opusvsexe:ember_boots",
+    "opusvsexe:demonic_trident"
+  ]
+}

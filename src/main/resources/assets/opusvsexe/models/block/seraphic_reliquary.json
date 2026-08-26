@@ -1,0 +1,205 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "opusvsexe:block/paradise/seraphic_reliquary_marble",
+    "marble": "opusvsexe:block/paradise/seraphic_reliquary_marble",
+    "gold": "opusvsexe:block/paradise/seraphic_reliquary_wing",
+    "wing": "opusvsexe:block/paradise/seraphic_reliquary_wing",
+    "core": "opusvsexe:block/paradise/seraphic_reliquary_core"
+  },
+  "elements": [
+    {
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        3,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "#marble"
+        },
+        "south": {
+          "texture": "#marble"
+        },
+        "east": {
+          "texture": "#marble"
+        },
+        "west": {
+          "texture": "#marble"
+        },
+        "up": {
+          "texture": "#marble"
+        },
+        "down": {
+          "texture": "#marble"
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        3,
+        5
+      ],
+      "to": [
+        11,
+        9,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#marble"
+        },
+        "south": {
+          "texture": "#marble"
+        },
+        "east": {
+          "texture": "#marble"
+        },
+        "west": {
+          "texture": "#marble"
+        },
+        "up": {
+          "texture": "#marble"
+        },
+        "down": {
+          "texture": "#marble"
+        }
+      }
+    },
+    {
+      "from": [
+        3,
+        9,
+        3
+      ],
+      "to": [
+        13,
+        12,
+        13
+      ],
+      "faces": {
+        "north": {
+          "texture": "#gold"
+        },
+        "south": {
+          "texture": "#gold"
+        },
+        "east": {
+          "texture": "#gold"
+        },
+        "west": {
+          "texture": "#gold"
+        },
+        "up": {
+          "texture": "#gold"
+        },
+        "down": {
+          "texture": "#gold"
+        }
+      }
+    },
+    {
+      "from": [
+        1,
+        11,
+        5
+      ],
+      "to": [
+        7,
+        14,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wing"
+        },
+        "south": {
+          "texture": "#wing"
+        },
+        "east": {
+          "texture": "#wing"
+        },
+        "west": {
+          "texture": "#wing"
+        },
+        "up": {
+          "texture": "#wing"
+        },
+        "down": {
+          "texture": "#wing"
+        }
+      }
+    },
+    {
+      "from": [
+        9,
+        11,
+        5
+      ],
+      "to": [
+        15,
+        14,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wing"
+        },
+        "south": {
+          "texture": "#wing"
+        },
+        "east": {
+          "texture": "#wing"
+        },
+        "west": {
+          "texture": "#wing"
+        },
+        "up": {
+          "texture": "#wing"
+        },
+        "down": {
+          "texture": "#wing"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        12,
+        6
+      ],
+      "to": [
+        10,
+        13,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#marble"
+        },
+        "south": {
+          "texture": "#marble"
+        },
+        "east": {
+          "texture": "#marble"
+        },
+        "west": {
+          "texture": "#marble"
+        },
+        "up": {
+          "texture": "#marble"
+        },
+        "down": {
+          "texture": "#marble"
+        }
+      }
+    }
+  ]
+}

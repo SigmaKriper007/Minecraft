@@ -1,0 +1,72 @@
+{
+  "textures": {
+    "pod": "opusvsexe:block/cinder_bean_stage0",
+    "particle": "opusvsexe:block/cinder_bean_stage0"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        4,
+        0
+      ],
+      "to": [
+        11,
+        12,
+        6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#pod"
+        },
+        "south": {
+          "texture": "#pod"
+        },
+        "east": {
+          "texture": "#pod"
+        },
+        "west": {
+          "texture": "#pod"
+        },
+        "up": {
+          "texture": "#pod"
+        },
+        "down": {
+          "texture": "#pod"
+        }
+      }
+    },
+    {
+      "from": [
+        7,
+        12,
+        2
+      ],
+      "to": [
+        9,
+        15,
+        4
+      ],
+      "faces": {
+        "north": {
+          "texture": "#pod"
+        },
+        "south": {
+          "texture": "#pod"
+        },
+        "east": {
+          "texture": "#pod"
+        },
+        "west": {
+          "texture": "#pod"
+        },
+        "up": {
+          "texture": "#pod"
+        },
+        "down": {
+          "texture": "#pod"
+        }
+      }
+    }
+  ]
+}

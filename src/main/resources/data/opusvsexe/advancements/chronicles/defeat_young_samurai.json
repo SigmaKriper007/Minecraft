@@ -1,0 +1,19 @@
+{
+  "parent": "opusvsexe:chronicles/japanese_archive",
+  "display": {
+    "icon": { "item": "opusvsexe:trophy_young_samurai" },
+    "title": { "translate": "advancement.opusvsexe.chronicles.young_samurai.title" },
+    "description": { "translate": "advancement.opusvsexe.chronicles.young_samurai.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "bloodflower_crest": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [{ "items": ["opusvsexe:trophy_young_samurai"] }] }
+    }
+  },
+  "rewards": { "experience": 500 }
+}

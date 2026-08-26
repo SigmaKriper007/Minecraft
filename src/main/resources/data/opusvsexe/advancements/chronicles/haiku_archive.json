@@ -1,0 +1,31 @@
+{
+  "parent": "opusvsexe:chronicles/root",
+  "display": {
+    "icon": {
+      "item": "opusvsexe:trophy_haiku_omega"
+    },
+    "title": {
+      "translate": "advancement.opusvsexe.chronicles.haiku.title"
+    },
+    "description": {
+      "translate": "advancement.opusvsexe.chronicles.haiku.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "haiku_1_5": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_1_5"] }] } },
+    "haiku_2": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_2"] }] } },
+    "haiku_3": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_3"] }] } },
+    "haiku_4": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_4"] }] } },
+    "haiku_5": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_5"] }] } },
+    "haiku_omega": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_omega"] }] } },
+    "haiku_drone": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_drone"] }] } },
+    "haiku_drone_plus": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_haiku_drone_plus"] }] } }
+  },
+  "rewards": {
+    "experience": 250
+  }
+}

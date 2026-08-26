@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "BBB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "opusvsexe:briarweave"
+    }
+  },
+  "result": {
+    "item": "opusvsexe:briarweave_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "opusvsexe:parthenon_forging",
+  "pattern": ["GRG", " D ", " S "],
+  "key": {
+    "G": { "item": "opusvsexe:gilded_marble" },
+    "R": { "item": "opusvsexe:ruby_halo_shard" },
+    "D": { "item": "minecraft:diamond_pickaxe" },
+    "S": { "item": "opusvsexe:aerie_bronze_ingot" }
+  },
+  "result": { "item": "opusvsexe:parthenon_pickaxe" }
+}

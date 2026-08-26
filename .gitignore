@@ -28,6 +28,9 @@ build/
 *.swp
 *.swo
 
+# Fabric dev runtime (test worlds, logs, crash reports)
+run/
+
 # Environment
 .env
 .env.local

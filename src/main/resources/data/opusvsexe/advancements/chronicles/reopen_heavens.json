@@ -1,0 +1,16 @@
+{
+  "parent": "opusvsexe:chronicles/paradise_archive",
+  "display": {
+    "icon": { "item": "opusvsexe:ruby_halo_shard" },
+    "title": { "translate": "advancement.opusvsexe.chronicles.reopen_heavens.title" },
+    "description": { "translate": "advancement.opusvsexe.chronicles.reopen_heavens.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "resurrected": { "trigger": "minecraft:impossible" }
+  },
+  "rewards": { "experience": 150 }
+}

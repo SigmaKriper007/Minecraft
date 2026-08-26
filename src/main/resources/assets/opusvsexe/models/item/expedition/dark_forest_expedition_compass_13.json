@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "opusvsexe:item/expedition/dark_forest_expedition_compass_13"
+  }
+}

@@ -1,12 +1,16 @@
 package com.opus.registry;
 
 import com.opus.OpusVsExe;
+import com.opus.item.HaikuCoreItem;
+import com.opus.item.HeavyLaserGunItem;
 import com.opus.item.KatanaItem;
 import com.opus.item.LaserGunItem;
+import com.opus.item.LightLaserGunItem;
 import com.opus.item.MemoryFragmentItem;
 import com.opus.item.ModTier;
 import com.opus.item.OpusArmorMaterial;
 import com.opus.item.RadioItem;
+import com.opus.item.SkyLaserGunItem;
 import com.opus.item.ShadowAssassinArmorItem;
 import com.opus.item.ShadowAssassinArmorMaterial;
 import com.opus.item.WarhammerItem;
@@ -14,9 +18,13 @@ import com.opus.sound.ModSounds;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.RecordItem;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SpawnEggItem;
 
 public class ModItems {
@@ -135,36 +143,72 @@ public class ModItems {
     public static final Item COLOSSEUM_WALL = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("colosseum_wall"),
         new BlockItem(ModBlocks.COLOSSEUM_WALL, new Item.Properties()));
 
+    // Energy barriers
+    public static final Item ENERGY_BARRIER = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("energy_barrier"),
+        new BlockItem(ModBlocks.ENERGY_BARRIER, new Item.Properties()));
+    public static final Item ENERGY_BARRIER_RED = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("energy_barrier_red"),
+        new BlockItem(ModBlocks.ENERGY_BARRIER_RED, new Item.Properties()));
+    public static final Item ENERGY_BARRIER_BLUE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("energy_barrier_blue"),
+        new BlockItem(ModBlocks.ENERGY_BARRIER_BLUE, new Item.Properties()));
+    public static final Item ENERGY_BEAM = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("energy_beam"),
+        new BlockItem(ModBlocks.ENERGY_BEAM, new Item.Properties()));
+    public static final Item FORCE_FIELD_PROJECTOR = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("force_field_projector"),
+        new BlockItem(ModBlocks.FORCE_FIELD_PROJECTOR, new Item.Properties()));
+    public static final Item PHASED_BARRIER = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("phased_barrier"),
+        new BlockItem(ModBlocks.PHASED_BARRIER, new Item.Properties()));
+
+    // Puzzle blocks (задача 19)
+    public static final Item SEQUENCE_KEYPAD = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("sequence_keypad"),
+        new BlockItem(ModBlocks.SEQUENCE_KEYPAD, new Item.Properties()));
+    public static final Item ENERGY_RELAY = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("energy_relay"),
+        new BlockItem(ModBlocks.ENERGY_RELAY, new Item.Properties()));
+
     // Opus materials
     public static final Item RAW_OPUS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("raw_opus"), new Item(new Item.Properties()));
     public static final Item STABILIZED_OPUS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("stabilized_opus"), new Item(new Item.Properties()));
     public static final Item RESONANT_OPUS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("resonant_opus"), new Item(new Item.Properties()));
     public static final Item CORE_OPUS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("core_opus"), new Item(new Item.Properties()));
+    public static final Item TITAN_PLATE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("titan_plate"),
+        new Item(new Item.Properties().fireResistant()));
 
     // Memory Fragments (lore items)
-    public static final Item MEMORY_FRAGMENT_1 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_1"), new MemoryFragmentItem(1, "Coddy and Kimi: Beginning"));
-    public static final Item MEMORY_FRAGMENT_2 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_2"), new MemoryFragmentItem(2, "Discovery of Opus"));
-    public static final Item MEMORY_FRAGMENT_3 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_3"), new MemoryFragmentItem(3, "Birth of Haiku"));
-    public static final Item MEMORY_FRAGMENT_4 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_4"), new MemoryFragmentItem(4, "Haiku 1.5"));
-    public static final Item MEMORY_FRAGMENT_5 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_5"), new MemoryFragmentItem(5, "Katana-OP"));
-    public static final Item MEMORY_FRAGMENT_6 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_6"), new MemoryFragmentItem(6, "Betrayal"));
-    public static final Item MEMORY_FRAGMENT_7 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_7"), new MemoryFragmentItem(7, "War Begins"));
-    public static final Item MEMORY_FRAGMENT_8 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_8"), new MemoryFragmentItem(8, "EXO-1"));
-    public static final Item MEMORY_FRAGMENT_9 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_9"), new MemoryFragmentItem(9, "Fall of Humanity"));
-    public static final Item MEMORY_FRAGMENT_10 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_10"), new MemoryFragmentItem(10, "Last Days"));
-    public static final Item MEMORY_FRAGMENT_11 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_11"), new MemoryFragmentItem(11, "Haiku's Thoughts I"));
-    public static final Item MEMORY_FRAGMENT_12 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_12"), new MemoryFragmentItem(12, "Haiku's Thoughts II"));
-    public static final Item MEMORY_FRAGMENT_13 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_13"), new MemoryFragmentItem(13, "The Final Stand"));
-    public static final Item MEMORY_FRAGMENT_14 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_14"), new MemoryFragmentItem(14, "Coddy's Legacy"));
-    public static final Item MEMORY_FRAGMENT_15 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_15"), new MemoryFragmentItem(15, "Omega Protocol"));
+    public static final Item MEMORY_FRAGMENT_1 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_1"), new MemoryFragmentItem(1));
+    public static final Item MEMORY_FRAGMENT_2 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_2"), new MemoryFragmentItem(2));
+    public static final Item MEMORY_FRAGMENT_3 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_3"), new MemoryFragmentItem(3));
+    public static final Item MEMORY_FRAGMENT_4 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_4"), new MemoryFragmentItem(4));
+    public static final Item MEMORY_FRAGMENT_5 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_5"), new MemoryFragmentItem(5));
+    public static final Item MEMORY_FRAGMENT_6 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_6"), new MemoryFragmentItem(6));
+    public static final Item MEMORY_FRAGMENT_7 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_7"), new MemoryFragmentItem(7));
+    public static final Item MEMORY_FRAGMENT_8 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_8"), new MemoryFragmentItem(8));
+    public static final Item MEMORY_FRAGMENT_9 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_9"), new MemoryFragmentItem(9));
+    public static final Item MEMORY_FRAGMENT_10 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_10"), new MemoryFragmentItem(10));
+    public static final Item MEMORY_FRAGMENT_11 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_11"), new MemoryFragmentItem(11));
+    public static final Item MEMORY_FRAGMENT_12 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_12"), new MemoryFragmentItem(12));
+    public static final Item MEMORY_FRAGMENT_13 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_13"), new MemoryFragmentItem(13));
+    public static final Item MEMORY_FRAGMENT_14 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_14"), new MemoryFragmentItem(14));
+    public static final Item MEMORY_FRAGMENT_15 = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("memory_fragment_15"), new MemoryFragmentItem(15));
 
     // Weapons
     public static final Item KATANA_OP = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("katana_op"), new KatanaItem(ModTier.OPUS, 2, -2.0f, new Item.Properties().stacksTo(1)));
     public static final Item KATANA_GOLD = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("katana_gold"), new KatanaItem(ModTier.OPUS, 2, -2.0f, new Item.Properties().stacksTo(1)));
     public static final Item KATANA_REFINED = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("katana_refined"), new KatanaItem(ModTier.OPUS, 2, -2.0f, new Item.Properties().stacksTo(1)));
     public static final Item OPUS_WARHAMMER = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("opus_warhammer"), new WarhammerItem(ModTier.OPUS, 5, -3.2f, new Item.Properties().stacksTo(1)));
+    public static final Item OPUS_PICKAXE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("opus_pickaxe"),
+        new PickaxeItem(ModTier.OPUS, 1, -2.8F, new Item.Properties()));
+    public static final Item OPUS_AXE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("opus_axe"),
+        new AxeItem(ModTier.OPUS, 5.0F, -3.0F, new Item.Properties()));
+    public static final Item OPUS_SHOVEL = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("opus_shovel"),
+        new ShovelItem(ModTier.OPUS, 1.5F, -3.0F, new Item.Properties()));
+    public static final Item OPUS_HOE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("opus_hoe"),
+        new HoeItem(ModTier.OPUS, -4, 0.0F, new Item.Properties()));
     public static final Item LASER_GUN = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("laser_gun"),
         new LaserGunItem(new Item.Properties().stacksTo(1)));
+    public static final Item LIGHT_LASER_GUN = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("light_laser_gun"),
+        new LightLaserGunItem(new Item.Properties().stacksTo(1)));
+    public static final Item HEAVY_LASER_GUN = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("heavy_laser_gun"),
+        new HeavyLaserGunItem(new Item.Properties().stacksTo(1)));
+    public static final Item SKY_LASER_GUN = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("sky_laser_gun"),
+        new SkyLaserGunItem(new Item.Properties().stacksTo(1)));
     public static final Item RADIO = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("radio"),
         new RadioItem(new Item.Properties().stacksTo(1)));
 
@@ -194,12 +238,6 @@ public class ModItems {
     public static final Item SHADOW_BOOTS = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("shadow_boots"),
         new ShadowAssassinArmorItem(SHADOW_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    // Spawn eggs
-    public static final Item HAIKU_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_spawn_egg"),
-        new SpawnEggItem(ModEntities.HAIKU, new Item.Properties()));
-    public static final Item HAIKU_OMEGA_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_omega_spawn_egg"),
-        new SpawnEggItem(ModEntities.HAIKU_OMEGA, new Item.Properties()));
-
     // Eternal Colosseum items
     public static final Item HAIKU_CORE = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_core"),
         new HaikuCoreItem(new Item.Properties()));
@@ -221,6 +259,10 @@ public class ModItems {
         new SpawnEggItem(ModEntities.HAIKU_5, 0x4a1515, 0xb03030, new Item.Properties()));
     public static final Item HAIKU_OMEGA_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_omega_spawn_egg"),
         new SpawnEggItem(ModEntities.HAIKU_OMEGA, 0x1f1740, 0x8f5ff0, new Item.Properties()));
+    public static final Item HAIKU_DRONE_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_drone_spawn_egg"),
+        new SpawnEggItem(ModEntities.HAIKU_DRONE, 0xE8E2D4, 0xFFB93E, new Item.Properties()));
+    public static final Item HAIKU_DRONE_PLUS_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("haiku_drone_plus_spawn_egg"),
+        new SpawnEggItem(ModEntities.HAIKU_DRONE_PLUS, 0xB8A88A, 0xFF7A1A, new Item.Properties()));
 
     // EXO spawn eggs
     public static final Item EXO_1_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("exo_1_sentinel_spawn_egg"),
@@ -232,8 +274,7 @@ public class ModItems {
     public static final Item EXO_4_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("exo_4_titan_spawn_egg"),
         new SpawnEggItem(ModEntities.EXO_4_TITAN, 0x3a1f3a, 0xc763d9, new Item.Properties()));
     public static final Item EXO_5_SPAWN_EGG = Registry.register(BuiltInRegistries.ITEM, OpusVsExe.id("exo_5_vengeance_spawn_egg"),
-        new SpawnEggItem(ModEntities.EXO_5_VENGEANCE, 0x1f1f1f, 0xe8e8e8, new Item.Properties()));
-
+        new SpawnEggItem(ModEntities.EXO_5_VENGEANCE, 0x5A1420, 0xE8941E, new Item.Properties()));
     public static void init() {
     }
 }

@@ -1,11 +1,10 @@
 package com.opus.item;
 
+import com.opus.entity.KatanaSlashEntity;
 import com.opus.registry.ModItems;
 import com.opus.sound.ModSounds;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -17,6 +16,7 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 
@@ -29,23 +29,44 @@ public class KatanaItem extends SwordItem {
         return true;
     }
     @Override public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack stack=player.getItemInHand(hand);
-        if (!player.getCooldowns().isOnCooldown(this)) {
-            int cost; float damage; double radius; String id=stack.getItem()==ModItems.KATANA_OP?"op":stack.getItem()==ModItems.KATANA_GOLD?"gold":"refined";
-            if (id.equals("op")) { cost=35; damage=14; radius=5; }
-            else if (id.equals("gold")) { cost=25; damage=9; radius=4; }
-            else { cost=20; damage=11; radius=3.5; }
-            CombatEffects.shockwave(player, radius, damage, 1.6, false);
-            if (!level.isClientSide && level instanceof ServerLevel server) {
-                server.sendParticles(id.equals("op")?ParticleTypes.SOUL_FIRE_FLAME:ParticleTypes.CRIT, player.getX(), player.getEyeY(), player.getZ(), 55, .7,.4,.7,.2);
+        ItemStack stack = player.getItemInHand(hand);
+        if (player.getCooldowns().isOnCooldown(this)) {
+            return InteractionResultHolder.fail(stack);
+        }
+
+        if (!level.isClientSide) {
+            Vec3 look = player.getLookAngle();
+            if (stack.is(ModItems.KATANA_OP)) {
+                Vec3 origin = player.getEyePosition().add(look.scale(1.2D)).add(0.0D, -0.55D, 0.0D);
+                KatanaSlashEntity.spawn(player, KatanaSlashEntity.OPUS, origin, look, 14.0F, 24);
+                player.getCooldowns().addCooldown(this, 50);
+            } else if (stack.is(ModItems.KATANA_GOLD)) {
+                Vec3 horizontal = new Vec3(look.x, 0.0D, look.z);
+                if (horizontal.lengthSqr() < 0.01D) {
+                    horizontal = new Vec3(0.0D, 0.0D, 1.0D);
+                }
+                Vec3 origin = player.position().add(horizontal.normalize().scale(1.25D)).add(0.0D, 0.12D, 0.0D);
+                KatanaSlashEntity.spawn(player, KatanaSlashEntity.GOLD, origin, horizontal, 12.0F, 22);
+                player.getCooldowns().addCooldown(this, 100);
+            } else {
+                Vec3 origin = player.getEyePosition().add(0.0D, -0.6D, 0.0D);
+                for (int i = 0; i < 12; i++) {
+                    double angle = Math.PI * 2.0D * i / 12.0D;
+                    Vec3 direction = new Vec3(Math.sin(angle), 0.03D, Math.cos(angle));
+                    KatanaSlashEntity.spawn(player, KatanaSlashEntity.REFINED,
+                            origin.add(direction.scale(0.9D)), direction, 8.0F, 14);
+                }
+                player.getCooldowns().addCooldown(this, 120);
             }
-            level.playSound(null, player.blockPosition(), ModSounds.KATANA_ULTIMATE, SoundSource.PLAYERS, 1.4f, id.equals("gold")?1.35f:.75f);
-            player.getCooldowns().addCooldown(this, id.equals("op")?80:55);
+            level.playSound(null, player.blockPosition(), ModSounds.KATANA_ULTIMATE,
+                    SoundSource.PLAYERS, 1.0F, stack.is(ModItems.KATANA_GOLD) ? 1.3F : 0.85F);
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }
     @Override public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("item.opusvsexe.katana_lore").withStyle(ChatFormatting.DARK_PURPLE));
-        tooltip.add(Component.literal("ПКМ: уникальная суперспособность").withStyle(ChatFormatting.GOLD));
+        String ability = stack.is(ModItems.KATANA_OP) ? "katana_op"
+                : stack.is(ModItems.KATANA_GOLD) ? "katana_gold" : "katana_refined";
+        tooltip.add(Component.translatable("item.opusvsexe." + ability + ".ability").withStyle(ChatFormatting.GOLD));
     }
 }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "charged=false": {
+      "model": "opusvsexe:block/rootbound_pedestal"
+    },
+    "charged=true": {
+      "model": "opusvsexe:block/rootbound_pedestal_charged"
+    }
+  }
+}

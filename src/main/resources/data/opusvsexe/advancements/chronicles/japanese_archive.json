@@ -1,0 +1,9 @@
+{
+  "parent":"opusvsexe:chronicles/survivor_archive",
+  "display":{"icon":{"item":"opusvsexe:trophy_samurai"},"title":{"translate":"advancement.opusvsexe.chronicles.japanese.title"},"description":{"translate":"advancement.opusvsexe.chronicles.japanese.description"},"frame":"challenge","show_toast":true,"announce_to_chat":true,"hidden":false},
+  "criteria":{
+    "black_ninja":{"trigger":"minecraft:inventory_changed","conditions":{"items":[{"items":["opusvsexe:trophy_black_ninja"]}]}},
+    "samurai":{"trigger":"minecraft:inventory_changed","conditions":{"items":[{"items":["opusvsexe:trophy_samurai"]}]}}
+  },
+  "rewards":{"experience":175}
+}

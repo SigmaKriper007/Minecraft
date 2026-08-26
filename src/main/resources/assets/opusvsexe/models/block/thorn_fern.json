@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "opusvsexe:block/dark_forest/thorn_fern"
+  }
+}

@@ -6,12 +6,19 @@ import com.opus.item.OpusArmorBonus;
 import com.opus.network.ModNetwork;
 import com.opus.registry.ModBlocks;
 import com.opus.registry.ModCreativeTab;
+import com.opus.registry.ModEffects;
 import com.opus.registry.ModEntities;
 import com.opus.registry.ModItems;
 import com.opus.registry.ModMenus;
+import com.opus.registry.TrophyRegistry;
 import com.opus.sound.ModSounds;
 import com.opus.structure.ModStructures;
 import com.opusvsexe.entity.custom.*;
+import com.opus.fire.FireLine;
+import com.opus.ember.EmberLine;
+import com.opus.paradise.ParadiseLine;
+import com.opus.darkforest.DarkForestLine;
+import com.opus.settlement.SettlementLine;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -26,6 +33,7 @@ public class OpusVsExe implements ModInitializer {
     public void onInitialize() {
         ModItems.init();
         ModBlocks.init();
+        ModEffects.init();
         ModBlockEntities.init();
         ModEntities.init();
         ModCreativeTab.init();
@@ -34,6 +42,15 @@ public class OpusVsExe implements ModInitializer {
         ModSounds.init();
         OpusArmorBonus.init();
         ModStructures.init();
+        OmegaMoonTracker.init();
+        // Fire Biome — параллельная линия
+        FireLine.init();
+        // Retained Ember armor runtime; the duplicate Ember Depths tab is retired.
+        EmberLine.init();
+        ParadiseLine.init();
+        DarkForestLine.init();
+        SettlementLine.init();
+        TrophyRegistry.init();
 
         FabricDefaultAttributeRegistry.register(ModEntities.HAIKU_1_5, Haiku15Entity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.HAIKU_2, Haiku2Entity.createAttributes());
@@ -41,6 +58,8 @@ public class OpusVsExe implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.HAIKU_4, Haiku4Entity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.HAIKU_5, Haiku5Entity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.HAIKU_OMEGA, HaikuOmegaEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.HAIKU_DRONE, HaikuDroneEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.HAIKU_DRONE_PLUS, HaikuDronePlusEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.EXO_1_SENTINEL, Exo1Sentinel.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.EXO_2_HUNTER, Exo2Hunter.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.EXO_3_VANGUARD, Exo3Vanguard.createAttributes());

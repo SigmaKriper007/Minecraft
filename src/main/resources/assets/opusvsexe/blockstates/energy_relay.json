@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "opusvsexe:block/energy_relay" },
+    "powered=true": { "model": "opusvsexe:block/energy_relay_powered" }
+  }
+}

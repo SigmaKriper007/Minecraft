@@ -1,0 +1,6 @@
+{
+  "type": "opusvsexe:parthenon_forging",
+  "pattern": ["A A", "AAA", "AAA"],
+  "key": { "A": { "item": "opusvsexe:aerie_bronze_ingot" } },
+  "result": { "item": "opusvsexe:aerie_bronze_chestplate" }
+}

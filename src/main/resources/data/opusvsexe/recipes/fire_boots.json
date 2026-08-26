@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "E E",
+    "E E"
+  ],
+  "key": {
+    "E": {
+      "item": "opusvsexe:magma_crust"
+    }
+  },
+  "result": {
+    "item": "opusvsexe:fire_boots"
+  }
+}

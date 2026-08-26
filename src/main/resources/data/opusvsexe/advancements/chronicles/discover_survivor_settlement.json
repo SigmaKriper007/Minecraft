@@ -1,0 +1,16 @@
+{
+  "parent": "opusvsexe:chronicles/dark_forest_archive",
+  "display": {
+    "icon": { "item": "opusvsexe:opus_ruins_compass" },
+    "title": { "translate": "advancement.opusvsexe.chronicles.discover_settlement.title" },
+    "description": { "translate": "advancement.opusvsexe.chronicles.discover_settlement.description" },
+    "frame": "task", "show_toast": true, "announce_to_chat": true, "hidden": false
+  },
+  "criteria": {
+    "inside": {
+      "trigger": "minecraft:location",
+      "conditions": { "player": { "location": { "structure": "opusvsexe:survivor_settlement" } } }
+    }
+  },
+  "rewards": { "experience": 75 }
+}
