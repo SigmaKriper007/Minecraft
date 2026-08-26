@@ -136,9 +136,8 @@ class Model:
         self._row_h = 0
 
     def alloc_uv(self, w, h, d):
-        s = self.uv_scale
-        tw = 2 * (w + d) * s
-        th = (d + h) * s
+        tw = 2 * (w + d)
+        th = d + h
         if self._u + tw > self.tex_w:
             self._u = 0
             self._v += self._row_h
@@ -187,7 +186,7 @@ class Model:
 
     def paint_cube(self, uv, s, paint, target='base'):
         img = self.img if target == 'base' else self.emissive
-        w, h, d = (v * self.uv_scale for v in s)
+        w, h, d = s
         u, v = uv
         faces = {
             'top': (u + d, v, w, d),

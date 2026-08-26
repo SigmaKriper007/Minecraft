@@ -113,13 +113,13 @@ def build_spiderling2():
     for i, z in enumerate(leg_z):
         up = {'o': [2.5, 3.8, z - 0.6], 's': [5.3, 1.2, 1.2], 'paint': upper_paint}
         lo = {'o': [7.4, 3.85, z - 0.55], 's': [7.6, 1.1, 1.1], 'paint': lower_paint}
-        m.bone(f'leg_{i+1}_left_upper', [2.7, 4.4, z], 'root', rot=[0, leg_yaw[i], 48], cubes=[up])
-        m.bone(f'leg_{i+1}_left_lower', [7.6, 4.4, z], f'leg_{i+1}_left_upper', rot=[0, 0, -113], cubes=[lo])
+        m.bone(f'leg_{i+1}_left_upper', [2.7, 4.4, z], 'root', rot=[0, leg_yaw[i], -48], cubes=[up])
+        m.bone(f'leg_{i+1}_left_lower', [7.6, 4.4, z], f'leg_{i+1}_left_upper', rot=[0, 0, 113], cubes=[lo])
         if shared_upper is None:
             shared_upper, shared_lower = up, lo
-        m.bone(f'leg_{i+1}_right_upper', [-2.7, 4.4, z], 'root', rot=[0, -leg_yaw[i], -48],
+        m.bone(f'leg_{i+1}_right_upper', [-2.7, 4.4, z], 'root', rot=[0, -leg_yaw[i], 48],
                cubes=[{'uv_of': shared_upper, 'o': [-7.8, 3.8, z - 0.6], 's': [5.3, 1.2, 1.2]}])
-        m.bone(f'leg_{i+1}_right_lower', [-7.6, 4.4, z], f'leg_{i+1}_right_upper', rot=[0, 0, 113],
+        m.bone(f'leg_{i+1}_right_lower', [-7.6, 4.4, z], f'leg_{i+1}_right_upper', rot=[0, 0, -113],
                cubes=[{'uv_of': shared_lower, 'o': [-15.0, 3.85, z - 0.55], 's': [7.6, 1.1, 1.1]}])
     return m
 
@@ -199,13 +199,13 @@ def build_broodmother():
     for i, z in enumerate(leg_z):
         up = {'o': [5.6, 7.05, z - 1.15], 's': [9.4, 2.4, 2.4], 'paint': upper_paint}
         lo = {'o': [15.0, 7.1, z - 1.15], 's': [14.6, 2.3, 2.3], 'paint': lower_paint}
-        m.bone(f'leg_{i+1}_left_upper', [5.9, 8.2, z], 'root', rot=[0, leg_yaw[i], 52], cubes=[up])
-        m.bone(f'leg_{i+1}_left_lower', [15.4, 8.2, z], f'leg_{i+1}_left_upper', rot=[0, 0, -116], cubes=[lo])
+        m.bone(f'leg_{i+1}_left_upper', [5.9, 8.2, z], 'root', rot=[0, leg_yaw[i], -52], cubes=[up])
+        m.bone(f'leg_{i+1}_left_lower', [15.4, 8.2, z], f'leg_{i+1}_left_upper', rot=[0, 0, 116], cubes=[lo])
         if shared_upper is None:
             shared_upper, shared_lower = up, lo
-        m.bone(f'leg_{i+1}_right_upper', [-5.9, 8.2, z], 'root', rot=[0, -leg_yaw[i], -52],
+        m.bone(f'leg_{i+1}_right_upper', [-5.9, 8.2, z], 'root', rot=[0, -leg_yaw[i], 52],
                cubes=[{'uv_of': shared_upper, 'o': [-15.0, 7.05, z - 1.15], 's': [9.4, 2.4, 2.4]}])
-        m.bone(f'leg_{i+1}_right_lower', [-15.4, 8.2, z], f'leg_{i+1}_right_upper', rot=[0, 0, 116],
+        m.bone(f'leg_{i+1}_right_lower', [-15.4, 8.2, z], f'leg_{i+1}_right_upper', rot=[0, 0, -116],
                cubes=[{'uv_of': shared_lower, 'o': [-29.6, 7.1, z - 1.15], 's': [14.6, 2.3, 2.3]}])
     return m
 
@@ -278,9 +278,9 @@ def anim_spiderling():
     A_lo = ['leg_1_left_lower', 'leg_3_left_lower', 'leg_2_right_lower', 'leg_4_right_lower']
     B_lo = ['leg_2_left_lower', 'leg_4_left_lower', 'leg_1_right_lower', 'leg_3_right_lower']
     for n in A_up:
-        scuttle[n] = {'rotation': track([(0, [0, 13, -8]), (0.22, [0, -13, 8]), (0.44, [0, 13, -8])])}
+        scuttle[n] = {'rotation': track([(0, [0, 13, 8]), (0.22, [0, -13, -8]), (0.44, [0, 13, 8])])}
     for n in B_up:
-        scuttle[n] = {'rotation': track([(0, [0, -13, 8]), (0.22, [0, 13, -8]), (0.44, [0, -13, 8])])}
+        scuttle[n] = {'rotation': track([(0, [0, -13, -8]), (0.22, [0, 13, 8]), (0.44, [0, -13, -8])])}
     for n in A_lo:
         scuttle[n] = {'rotation': track([(0, [16, 0, 0]), (0.11, [-4, 0, 0]), (0.22, [-8, 0, 0]), (0.33, [6, 0, 0]), (0.44, [16, 0, 0])])}
     for n in B_lo:
@@ -324,9 +324,9 @@ def anim_broodmother():
     A_lo = ['leg_1_left_lower', 'leg_3_left_lower', 'leg_2_right_lower', 'leg_4_right_lower']
     B_lo = ['leg_2_left_lower', 'leg_4_left_lower', 'leg_1_right_lower', 'leg_3_right_lower']
     for n in A_up:
-        walk[n] = {'rotation': track([(0, [0, 14, -9]), (0.425, [0, -14, 9]), (0.85, [0, 14, -9])])}
+        walk[n] = {'rotation': track([(0, [0, 14, 9]), (0.425, [0, -14, -9]), (0.85, [0, 14, 9])])}
     for n in B_up:
-        walk[n] = {'rotation': track([(0, [0, -14, 9]), (0.425, [0, 14, -9]), (0.85, [0, -14, 9])])}
+        walk[n] = {'rotation': track([(0, [0, -14, -9]), (0.425, [0, 14, 9]), (0.85, [0, -14, -9])])}
     for n in A_lo:
         walk[n] = {'rotation': track([(0, [18, 0, 0]), (0.2125, [4, 0, 0]), (0.425, [-9, 0, 0]), (0.6375, [6, 0, 0]), (0.85, [18, 0, 0])])}
     for n in B_lo:
@@ -367,8 +367,8 @@ def anim_broodmother():
         for side in ('left', 'right'):
             sz = 1 if side == 'left' else -1
             slam[f'leg_{i}_{side}_upper'] = {'rotation': track([
-                (0, [0, 0, 0]), (0.5, [0, -6 * sz, -16 * sz]), (0.8, [0, 8 * sz, 16 * sz]),
-                (1.2, [0, -10 * sz, -24 * sz]), (1.7, [0, 0, 4 * sz]), (2.1, [0, 0, 0])])}
+                (0, [0, 0, 0]), (0.5, [0, -6 * sz, 16 * sz]), (0.8, [0, 8 * sz, -16 * sz]),
+                (1.2, [0, -10 * sz, 24 * sz]), (1.7, [0, 0, -4 * sz]), (2.1, [0, 0, 0])])}
             slam[f'leg_{i}_{side}_lower'] = {'rotation': track([
                 (0, [0, 0, 0]), (0.5, [22, 0, 0]), (0.8, [-15, 0, 0]),
                 (1.2, [24, 0, 0]), (1.7, [-4, 0, 0]), (2.1, [0, 0, 0])])}

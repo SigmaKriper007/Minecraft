@@ -17,7 +17,7 @@ if "--preview" in sys.argv:
     sys.path.insert(0, HERE)
     import preview
     preview.DEBUG_BONES = set()
-    preview.UV_SCALE = 2.0
+    preview.UV_SCALE = 1.0
     jobs = [
         ("geo/dark_forest/shade_spiderling", "textures/dark_forest/entity/shade_spiderling", 9),
         ("geo/dark_forest/gloom_broodmother", "textures/dark_forest/entity/gloom_broodmother", 4.2),

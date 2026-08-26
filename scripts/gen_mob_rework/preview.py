@@ -58,12 +58,12 @@ def render(geo_path, tex_path, out_path, yaw_deg=35, pitch_deg=18, scale=6, size
             parent = b.get('parent')
             b = next((x for x in geo['bones'] if x['name'] == parent), None)
         def xform(point):
-            # apply bone rotations from root down
+            # apply bone rotations from root down; MC model space mirrors X,
+            # so in-game visual rotation = negated angles (matches GeckoLib)
             for bn in reversed(chain):
                 px, py, pz = bn['pivot']
                 rot = bn.get('rotation', [0, 0, 0])
-                rx, ry, rz = (math.radians(a) for a in rot)
-                # bedrock order: Z, then X, then Y? Blockbench uses ZYX? use Z*X*Y
+                rx, ry, rz = (-math.radians(a) for a in rot)
                 x, y, z = point[0] - px, point[1] - py, point[2] - pz
                 if ry:
                     x, z = x * math.cos(ry) + z * math.sin(ry), -x * math.sin(ry) + z * math.cos(ry)
