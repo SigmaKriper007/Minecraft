@@ -5,7 +5,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "opusvsexe:coddy_workshop/yard",
+        "location": "opusvsexe:coddy_workshop/main",
         "processors": "opusvsexe:workshop_ruin",
         "projection": "rigid"
       }

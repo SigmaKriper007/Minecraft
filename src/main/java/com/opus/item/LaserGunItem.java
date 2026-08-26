@@ -51,7 +51,7 @@ public class LaserGunItem extends Item {
                 laser.setPos(pos);
                 laser.setShooter(player.getUUID());
                 level.addFreshEntity(laser);
-                level.playSound(null, pos.x, pos.y, pos.z, ModSounds.SUPER_LASER, SoundSource.PLAYERS, 3.0F, 1.0F);
+                level.playSound(null, pos.x, pos.y, pos.z, ModSounds.SUPER_LASER, SoundSource.PLAYERS, 1.0F, 1.0F);
                 player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
             }
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "charged=false": {
+      "model": "opusvsexe:block/seraphic_reliquary"
+    },
+    "charged=true": {
+      "model": "opusvsexe:block/seraphic_reliquary_charged"
+    }
+  }
+}

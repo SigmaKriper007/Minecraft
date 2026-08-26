@@ -1,0 +1,23 @@
+{
+  "parent": "opusvsexe:chronicles/root",
+  "display": {
+    "icon": {
+      "item": "opusvsexe:haiku_core"
+    },
+    "title": {
+      "translate": "advancement.opusvsexe.summon_omega.title"
+    },
+    "description": {
+      "translate": "advancement.opusvsexe.summon_omega.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "summoned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "opusvsexe:block/paradise/parthenon_forge_bottom",
+    "side": "opusvsexe:block/paradise/parthenon_forge_side",
+    "top": "opusvsexe:block/paradise/parthenon_forge_top"
+  }
+}

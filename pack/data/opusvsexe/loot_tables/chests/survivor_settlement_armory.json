@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:chest",
+  "pools": [{
+    "rolls": { "type": "minecraft:uniform", "min": 3, "max": 5 },
+    "entries": [
+      { "type": "minecraft:item", "name": "minecraft:arrow", "weight": 10, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 6, "max": 18 } }] },
+      { "type": "minecraft:item", "name": "minecraft:shield", "weight": 4 },
+      { "type": "minecraft:item", "name": "minecraft:iron_sword", "weight": 3 },
+      { "type": "minecraft:item", "name": "minecraft:iron_axe", "weight": 3 },
+      { "type": "minecraft:item", "name": "minecraft:chainmail_chestplate", "weight": 2 },
+      { "type": "minecraft:item", "name": "opusvsexe:raw_opus", "weight": 1 }
+    ]
+  }],
+  "random_sequence": "opusvsexe:chests/survivor_settlement_armory"
+}

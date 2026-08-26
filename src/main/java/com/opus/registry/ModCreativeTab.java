@@ -70,10 +70,25 @@ public class ModCreativeTab {
             entries.accept(ModItems.TRIAL_TRIGGER);
             entries.accept(ModItems.REWARD_VAULT);
             entries.accept(ModItems.DORMANT_SPAWNER);
+            entries.accept(ModItems.REINFORCED_OPUS_BLOCK);
+            entries.accept(ModItems.HAIKU_AMBER_BLOCK);
+            entries.accept(ModItems.ALTAR_HEART);
+            entries.accept(ModItems.COLOSSEUM_CONCRETE);
+            entries.accept(ModItems.AMBER_PILLAR);
+            entries.accept(ModItems.COLOSSEUM_WALL);
+            entries.accept(ModItems.ENERGY_BARRIER);
+            entries.accept(ModItems.ENERGY_BARRIER_RED);
+            entries.accept(ModItems.ENERGY_BARRIER_BLUE);
+            entries.accept(ModItems.ENERGY_BEAM);
+            entries.accept(ModItems.FORCE_FIELD_PROJECTOR);
+            entries.accept(ModItems.PHASED_BARRIER);
+            entries.accept(ModItems.SEQUENCE_KEYPAD);
+            entries.accept(ModItems.ENERGY_RELAY);
             entries.accept(ModItems.RAW_OPUS);
             entries.accept(ModItems.STABILIZED_OPUS);
             entries.accept(ModItems.RESONANT_OPUS);
             entries.accept(ModItems.CORE_OPUS);
+            entries.accept(ModItems.TITAN_PLATE);
             entries.accept(ModItems.MEMORY_FRAGMENT_1);
             entries.accept(ModItems.MEMORY_FRAGMENT_2);
             entries.accept(ModItems.MEMORY_FRAGMENT_3);
@@ -93,7 +108,14 @@ public class ModCreativeTab {
             entries.accept(ModItems.KATANA_GOLD);
             entries.accept(ModItems.KATANA_REFINED);
             entries.accept(ModItems.OPUS_WARHAMMER);
+            entries.accept(ModItems.OPUS_PICKAXE);
+            entries.accept(ModItems.OPUS_AXE);
+            entries.accept(ModItems.OPUS_SHOVEL);
+            entries.accept(ModItems.OPUS_HOE);
             entries.accept(ModItems.LASER_GUN);
+            entries.accept(ModItems.LIGHT_LASER_GUN);
+            entries.accept(ModItems.HEAVY_LASER_GUN);
+            entries.accept(ModItems.SKY_LASER_GUN);
             entries.accept(ModItems.RADIO);
             entries.accept(ModItems.DOOM_ETERNAL_DISC);
             entries.accept(ModItems.OPUS_HELMET);
@@ -110,11 +132,17 @@ public class ModCreativeTab {
             entries.accept(ModItems.HAIKU_4_SPAWN_EGG);
             entries.accept(ModItems.HAIKU_5_SPAWN_EGG);
             entries.accept(ModItems.HAIKU_OMEGA_SPAWN_EGG);
+            entries.accept(ModItems.HAIKU_DRONE_SPAWN_EGG);
+            entries.accept(ModItems.HAIKU_DRONE_PLUS_SPAWN_EGG);
             entries.accept(ModItems.EXO_1_SPAWN_EGG);
             entries.accept(ModItems.EXO_2_SPAWN_EGG);
             entries.accept(ModItems.EXO_3_SPAWN_EGG);
             entries.accept(ModItems.EXO_4_SPAWN_EGG);
             entries.accept(ModItems.EXO_5_SPAWN_EGG);
+            entries.accept(ModItems.HAIKU_CORE);
+            entries.accept(ModItems.OPUS_FRAGMENT);
+            entries.accept(ModItems.AI_TEAR);
+            TrophyRegistry.all().forEach(entries::accept);
         });
     }
 }

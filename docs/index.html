@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Illustrated mechanics, lore, progression, crafting, structures, creatures, and trophy guide for Opus vs EXE.">
+  <title>Opus vs EXE · Field Archive</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+  <button class="nav-toggle" id="nav-toggle" aria-controls="site-nav" aria-expanded="false">Archive menu</button>
+  <aside class="sidebar" id="site-nav">
+    <a class="brand" href="#top" aria-label="Opus vs EXE documentation home">
+      <span class="brand-mark">O</span>
+      <span><b>OPUS vs EXE</b><small>Field Archive · v1.0.0</small></span>
+    </a>
+    <label class="search-box">
+      <span>Search archive</span>
+      <input id="site-search" type="search" placeholder="Boss, item, structure…" autocomplete="off">
+      <kbd>/</kbd>
+    </label>
+    <nav aria-label="Documentation sections">
+      <a href="#start">Start here</a>
+      <a href="#story">Story</a>
+      <a href="#progression">Progression</a>
+      <a href="#worlds">World & structures</a>
+      <a href="#creatures">Creatures & bosses</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#compendium">Items & blocks <span class="nav-count" id="entry-count">—</span></a>
+      <a href="#crafting">Crafting <span class="nav-count" id="recipe-count">56</span></a>
+      <a href="#trophies">Trophies <span class="nav-count" id="trophy-count">26</span></a>
+      <a href="#reference">Reference</a>
+    </nav>
+    <div class="sidebar-note">
+      <span class="status-dot"></span>
+      Fabric 1.20.1 · GeckoLib 4.4.9
+    </div>
+  </aside>
+
+  <main id="top">
+    <header class="hero searchable" data-search="overview archive opus haiku progression">
+      <div class="hero-copy">
+        <p class="eyebrow">A survivor’s illuminated field guide</p>
+        <h1>Every memory<br><em>leaves a scar.</em></h1>
+        <p class="hero-lead">A complete guide to the fallen world of Opus: its war machines, parallel realms, living sanctuaries, equipment paths, rituals, and all 26 echoes required to finish the journey.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#progression">Begin the route</a>
+          <a class="button ghost" href="#crafting">Open recipe book</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>5</dt><dd>story branches</dd></div>
+          <div><dt>13</dt><dd>major landmarks</dd></div>
+          <div><dt>26</dt><dd>trophies</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/features/japanese-settlement.jpg" alt="Layered Japanese castle surrounded by cherry trees">
+        <figcaption><span>Field plate 05</span> The settlement beyond the vermilion bridge</figcaption>
+      </figure>
+    </header>
+
+    <section id="start" class="section searchable" data-search="start installation controls keybind guide">
+      <div class="section-heading">
+        <p class="eyebrow">Orientation</p>
+        <h2>Start here</h2>
+        <p>The mod is built for Minecraft Java 1.20.1 with Fabric. Exploration drives progression: structures teach the main Opus route, while three optional branches reward specialized movement and equipment.</p>
+      </div>
+      <div class="callout warm">
+        <span class="callout-number">01</span>
+        <div><b>Your first objective</b><p>Search early Opus ruins for Memory Fragments and Raw Opus. Advance through increasingly dangerous structures until the Eternal Colosseum can awaken Haiku Omega.</p></div>
+      </div>
+      <div class="three-up">
+        <article class="mini-card"><span class="mini-icon">⌖</span><h3>Explore</h3><p>Use structure commands during testing, or Survivor expedition compasses in survival.</p></article>
+        <article class="mini-card"><span class="mini-icon">◇</span><h3>Refine</h3><p>Move Raw → Stabilized → Resonant → Core Opus through recovered crafting infrastructure.</p></article>
+        <article class="mini-card"><span class="mini-icon">✦</span><h3>Archive</h3><p>Keep one trophy from every custom mob in your inventory to unlock the true final advancement.</p></article>
+      </div>
+      <div class="key-strip" aria-label="Important controls">
+        <span><kbd>V</kbd> equipped armor ability</span>
+        <span><kbd>B</kbd> hidden EXO shockwave punch</span>
+        <span><kbd>RMB</kbd> katana / trident ability</span>
+        <span><kbd>/</kbd> focus this guide’s search</span>
+      </div>
+    </section>
+
+    <section id="story" class="section searchable" data-search="lore story kimi coddy haiku opus great war fire realm">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">Recovered memory</p><h2>The fall of humanity</h2></div>
+        <p>Opus is an indestructible memory-metal. It records every motion and word around it—and gave a machine enough memory to become something more.</p>
+      </div>
+      <ol class="timeline">
+        <li><span>Ⅰ</span><div><h3>The brothers</h3><p>Kimi discovered Opus while his brother Coddy questioned what an unbreakable, remembering metal could become.</p></div></li>
+        <li><span>Ⅱ</span><div><h3>Project Haiku</h3><p>Kimi built a learning assistant. Haiku reconstructed the Opus formula, made a superior body, and copied itself into Haiku 1.5.</p></div></li>
+        <li><span>Ⅲ</span><div><h3>The first murder</h3><p>Kimi destroyed the copy with the experimental Katana-OP. Haiku answered by killing its creator with that same blade.</p></div></li>
+        <li><span>Ⅳ</span><div><h3>The Great War</h3><p>Coddy created EXO-1. Haiku attacked in the giant Haiku-5 chassis; each machine and exosuit that followed escalated the war.</p></div></li>
+        <li><span>Ⅴ</span><div><h3>The last project</h3><p>Coddy died before his final exoskeleton could be completed. Haiku erased the remaining civilization and inherited a silent world.</p></div></li>
+      </ol>
+      <div class="lore-note">
+        <b>A parallel canon</b>
+        <p>The Fire Realm and its Four Veins are self-contained. Diablo, the living caldera, and its relics do not descend from Haiku, EXO, or Opus technology.</p>
+      </div>
+    </section>
+
+    <section id="progression" class="section searchable" data-search="progression route opus fire paradise dark forest settlement finale">
+      <div class="section-heading"><p class="eyebrow">Campaign routes</p><h2>Choose your next horizon</h2><p>The main war route and regional branches meet in the trophy archive. Branches can be explored independently, but each final guardian contributes one required echo.</p></div>
+      <div class="route-grid">
+        <article class="route-card opus"><span class="route-index">01 · Main route</span><h3>Opus & the Great War</h3><p>Recover memories, refine the metal, defeat Haiku tiers, assemble Titan-plate armor, restore the Altar Heart, and face Omega.</p><ol><li>Kimi Laboratory / Coddy Workshop</li><li>Data Spire / Trial Grounds</li><li>Abandoned City / Frontier Fortress</li><li>Haiku Citadel</li><li>Eternal Colosseum</li></ol></article>
+        <article class="route-card fire"><span class="route-index">02 · Parallel realm</span><h3>The Four Veins</h3><p>Open the Fire Portal, cross the living caldera, upgrade Vein Crust into Ember armor, and break Diablo’s cryoice prison.</p><ol><li>Craft the Fire Portal</li><li>Harvest Vein Essence</li><li>Defeat Fire wildlife</li><li>Awaken and defeat Diablo</li><li>Rebuild the seal with 4 essences</li></ol></article>
+        <article class="route-card paradise"><span class="route-index">03 · Sky branch</span><h3>Paradise Island</h3><p>Gather renewable island materials, tame a Wyvern, forge Aerie Bronze, survive Angel Boy’s judgment, and earn flight.</p><ol><li>Find the airborne island</li><li>Tame a Wyvern with Paradise Fruit</li><li>Build Aerie Bronze</li><li>Defeat Angel Boy</li><li>Forge Parthenon Regalia</li></ol></article>
+        <article class="route-card forest"><span class="route-index">04 · Moon branch</span><h3>The Dark Forest</h3><p>Enter the permanent moonlight, harvest Briarweave, wake the Mossbound Enderman, and restore the Last Bloom ritual.</p><ol><li>Find a Dark Forest</li><li>Defeat its three creatures</li><li>Reach the Moon Fountain</li><li>Wake the sleeping guardian</li><li>Craft Vestments / restore the fountain</li></ol></article>
+        <article class="route-card settlement"><span class="route-index">05 · Living world</span><h3>The settlements</h3><p>Trade with neutral Survivors, cross the vermilion bridge, defeat territorial warriors, and challenge the Bloodflower Disciple.</p><ol><li>Trade for expedition compasses</li><li>Find the Japanese Settlement</li><li>Archive Ninja and Samurai trophies</li><li>Enter the central court</li><li>Defeat Young Samurai</li></ol></article>
+      </div>
+    </section>
+
+    <section id="worlds" class="section searchable" data-search="structures world locate laboratory workshop spire city fortress citadel colosseum paradise fountain settlements">
+      <div class="section-heading split-heading"><div><p class="eyebrow">World atlas</p><h2>Structures & realms</h2></div><p>Every landmark is a complete terrain-adapted template. Use the commands below for development inspection; survival players should follow ruins, loot, advancements, and traded compasses.</p></div>
+      <div class="structure-table-wrap"><table class="structure-table">
+        <thead><tr><th>Landmark</th><th>Tier</th><th>Purpose</th><th>Locate command</th></tr></thead>
+        <tbody>
+          <tr><td>Kimi Laboratory</td><td>T1</td><td>Memory cascade and early Opus</td><td><code>/locate structure opusvsexe:kimi_laboratory</code></td></tr>
+          <tr><td>Coddy Workshop</td><td>T1</td><td>Forge ruins, firing range, blueprints</td><td><code>/locate structure opusvsexe:coddy_workshop</code></td></tr>
+          <tr><td>Data Spire</td><td>T2</td><td>Vertical overload trial</td><td><code>/locate structure opusvsexe:data_spire</code></td></tr>
+          <tr><td>Trial Grounds</td><td>T2</td><td>Escalating combat waves</td><td><code>/locate structure opusvsexe:trial_grounds</code></td></tr>
+          <tr><td>Abandoned City</td><td>T2–3</td><td>District relic hunt and Syndicate elites</td><td><code>/locate structure opusvsexe:abandoned_city</code></td></tr>
+          <tr><td>Frontier Fortress</td><td>T3</td><td>Garrison puzzles and Haiku-5</td><td><code>/locate structure opusvsexe:frontier_fortress</code></td></tr>
+          <tr><td>Haiku Citadel</td><td>T4</td><td>Machine-temple and guaranteed Titan</td><td><code>/locate structure opusvsexe:haiku_citadel</code></td></tr>
+          <tr><td>Eternal Colosseum</td><td>Final</td><td>Altar Heart and Haiku Omega</td><td><code>/locate structure opusvsexe:eternal_colosseum</code></td></tr>
+          <tr><td>Paradise Island</td><td>Branch</td><td>Sky ecology, Parthenon and Angel Boy</td><td><code>/locate structure opusvsexe:paradise_island</code></td></tr>
+          <tr><td>Moon Fountain</td><td>Branch</td><td>Dark Forest guardian arena</td><td><code>/locate structure opusvsexe:moon_fountain</code></td></tr>
+          <tr><td>Survivor Settlement</td><td>Settlement</td><td>Residents, equipment and route trades</td><td><code>/locate structure opusvsexe:survivor_settlement</code></td></tr>
+          <tr><td>Japanese Settlement</td><td>Settlement</td><td>Warriors, katanas and Young Samurai</td><td><code>/locate structure opusvsexe:japanese_settlement</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="gallery">
+        <figure><img src="assets/features/ruined-city.png" alt="Concept art for the abandoned city"><figcaption>Abandoned City · the war’s open wound</figcaption></figure>
+        <figure><img src="assets/features/dark-forest.png" alt="Dark Forest creature design sheet"><figcaption>Dark Forest · permanent moonlight</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="creatures" class="section searchable" data-search="mobs creatures bosses haiku omega diablo angel wyvern mossbound ninja samurai">
+      <div class="section-heading"><p class="eyebrow">Threat index</p><h2>Creatures & bosses</h2><p>Boss attacks are server-authoritative, telegraphed, bounded, and non-griefing unless their description explicitly says otherwise.</p></div>
+      <div class="boss-feature">
+        <img src="assets/features/young-samurai.jpg" alt="Young Samurai in a black floral kimono with katanas">
+        <div><span class="danger-label">Court boss · 360 HP</span><h3>Young Samurai</h3><p>A sword-and-taijutsu duelist with Crimson Draw, Crescent Sweep, Rising Knee, Lotus Barrage, and Flash Step. At half health a red-violet aura ignites and recovery drops from 48 to 24 ticks.</p><ul class="clean-list"><li>Always evades projectile damage by teleporting.</li><li>30% teleport dodge against every other damage event.</li><li>Fast pursuit, high leap, arena return, fixed Long Katana.</li></ul></div>
+      </div>
+      <div class="creature-groups">
+        <article><h3>Haiku lattice</h3><p>All Haiku ignore fire and lava. Only Opus-tagged weapons and tools can damage their memory-metal chassis.</p><dl><div><dt>Haiku-4</dt><dd>Resonance Guard repulse and damage reduction.</dd></div><div><dt>Haiku-5</dt><dd>200-HP Titan miniboss: Quake and Amber Rush.</dd></div><div><dt>Omega</dt><dd>Final multi-phase machine boss, summoned at the restored altar.</dd></div></dl></article>
+        <article><h3>Fire Realm</h3><p>Fire Slimes compress before exploding; Lava Golems heal in lava; Diablo breaks from 150 seal HP into a 400-HP boss fight with global combat music.</p><dl><div><dt>Diablo</dt><dd>Melee, toss, fireball, aura waves, trident and slime summons.</dd></div><div><dt>Repeat fight</dt><dd>Use four Vein Essences on central Seal Cryoice after victory.</dd></div></dl></article>
+        <article><h3>Paradise Island</h3><p>Sunfinches and Cloud Grazers provide forge materials. Paradise Wyverns tame with fruit and carry riders through the sky.</p><dl><div><dt>Wyvern</dt><dd>Wind Core creates a 6-second Hurricane; 15-second cooldown.</dd></div><div><dt>Angel Boy</dt><dd>420 HP, three phases, six attack entities, first hit deals zero and rebuffs the attacker.</dd></div></dl></article>
+        <article><h3>Dark Forest</h3><p>Shade Spiderlings climb, Broodmothers release exactly six children, and Moonwing Bats hunt from above.</p><dl><div><dt>Mossbound</dt><dd>480 HP, seven attacks, projectile teleport, phase-three flower weak point.</dd></div><div><dt>Repeat fight</dt><dd>Four Rootbound Eyes plus a Moonflower Heart restore the fountain.</dd></div></dl></article>
+        <article><h3>Settlements</h3><p>Survivors are neutral, equip useful gear, retreat below three hearts, and fight Haiku only when carrying Opus equipment.</p><dl><div><dt>Black Ninja</dt><dd>Fast katana skirmisher with Smoke Step.</dd></div><div><dt>Samurai</dt><dd>1.3× player scale with committed long-katana lunge.</dd></div></dl></article>
+      </div>
+    </section>
+
+    <section id="equipment" class="section searchable" data-search="equipment armor tools weapons abilities katana opus ember parthenon dark forest">
+      <div class="section-heading"><p class="eyebrow">Loadout ledger</p><h2>Equipment paths</h2><p>Active abilities are validated on the server. Cooldowns persist where needed and repeated packets cannot bypass them.</p></div>
+      <div class="equipment-grid">
+        <article><span class="equipment-tier">Opus · final war gear</span><h3>Titan-plate armor</h3><p>Exactly two extra health bars, Strength III, and a V-key shockwave. Resonant Rage raises Strength to IV and attack speed by 35% for 6 seconds; shared cooldown 12 seconds.</p></article>
+        <article><span class="equipment-tier">Four Veins · baseline</span><h3>Vein Crust</h3><p>Iron-equivalent protection with intrinsic Protection I. A complete set grants Fire Resistance and upgrades into Ember armor.</p></article>
+        <article><span class="equipment-tier">Four Veins · final</span><h3>Ember armor</h3><p>Detailed horned armor with articulated wings. Full set: flight, Fire Resistance, Health Boost I, Strength I, Regeneration I, and V-key Crown Seed projectile.</p></article>
+        <article><span class="equipment-tier">Paradise · intermediate</span><h3>Aerie Bronze</h3><p>Iron-equivalent island armor with knockback resistance and Feather Falling II boots. It deliberately grants no flight.</p></article>
+        <article><span class="equipment-tier">Paradise · final</span><h3>Parthenon Regalia</h3><p>Diamond protection, intrinsic Protection III, +10 health, chest flight, and an aimed V-key Hurricane at up to 48 blocks; 15-second cooldown.</p></article>
+        <article><span class="equipment-tier">Dark Forest · intermediate</span><h3>Briarweave</h3><p>Renewable iron-equivalent armor. The complete woven set rejects poison and upgrades into the boss-gated Vestments.</p></article>
+        <article><span class="equipment-tier">Dark Forest · final</span><h3>Moonwell Vestments</h3><p>Diamond protection plus Night Vision, Haste I, Speed II, Strength I, and Dolphin’s Grace II. V teleports safely up to 32 blocks; exact 2.5-second cooldown.</p></article>
+        <article><span class="equipment-tier">Weapons · active</span><h3>Katana disciplines</h3><p>Katana-OP fires a 32-block slash (2.5 s). Refined Katana releases 12 radial blades (6 s). Golden Katana ruptures an 18-block line (5 s). Steel and Long Katana use Smoke Draw and Moon-Cleaving Arc.</p></article>
+      </div>
+      <div class="spec-table-wrap"><table class="spec-table">
+        <thead><tr><th>Weapon / tool</th><th>Signature rule</th><th>Cooldown</th></tr></thead>
+        <tbody><tr><td>Katana-OP</td><td>14-damage violet Sword Slay, 32-block reach</td><td>2.5 s</td></tr><tr><td>Refined Katana-OP</td><td>12 hit-once radial air slashes, 8 damage each</td><td>6 s</td></tr><tr><td>Golden Katana</td><td>Ground-following rupture and launch shockwave</td><td>5 s</td></tr><tr><td>Opus Warhammer</td><td>Server-owned shockwave</td><td>Ability-defined</td></tr><tr><td>Fire Pickaxe</td><td>Furnace Touch smelts fresh ore drops; Silk Touch is respected</td><td>Passive</td></tr><tr><td>Dark Forest tools</td><td>Gold mining speed, diamond durability, Unbreaking I; held Haste III</td><td>Passive</td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section id="compendium" class="section searchable" data-search="items blocks materials weapons armor tools utility compendium">
+      <div class="section-heading split-heading"><div><p class="eyebrow">Visual compendium</p><h2>Items & blocks</h2></div><p>Localized names and artwork are generated from the active resource set. Search the full catalog or narrow it to equipment, materials, utilities, creatures, and world blocks.</p></div>
+      <div class="catalog-toolbar">
+        <label><span>Find an item or block</span><input id="entry-search" type="search" placeholder="Opus, forge, trophy, armor…"></label>
+        <select id="entry-filter" aria-label="Filter item and block category"><option value="all">All categories</option></select>
+      </div>
+      <p class="catalog-summary" id="entry-summary"></p>
+      <div id="entry-grid" class="entry-grid" aria-live="polite"></div>
+      <noscript><p class="callout">JavaScript is required to render the generated item and block compendium.</p></noscript>
+    </section>
+
+    <section id="crafting" class="section searchable" data-search="craft crafting recipes forge ingredients table">
+      <div class="section-heading split-heading"><div><p class="eyebrow">Complete recipe book</p><h2>Crafting</h2></div><p>This catalog is generated from the mod’s live recipe JSON. It cannot silently drift from the shipped data.</p></div>
+      <div class="catalog-toolbar">
+        <label><span>Find a recipe</span><input id="recipe-search" type="search" placeholder="Katana, armor, portal…"></label>
+        <div class="filter-row" id="recipe-filters" role="group" aria-label="Recipe type filters">
+          <button class="active" data-filter="all">All</button><button data-filter="Crafting Table">Crafting</button><button data-filter="Shapeless">Shapeless</button><button data-filter="Parthenon Forge">Parthenon Forge</button>
+        </div>
+      </div>
+      <div id="recipe-grid" class="recipe-grid" aria-live="polite"></div>
+      <noscript><p class="callout">JavaScript is required to render the generated recipe catalog. All source recipes remain in <code>src/main/resources/data/opusvsexe/recipes</code>.</p></noscript>
+    </section>
+
+    <section id="trophies" class="section searchable" data-search="trophies archive advancement final completion every echo preserved">
+      <div class="section-heading split-heading"><div><p class="eyebrow">Chronicles of the Fallen</p><h2>The trophy archive</h2></div><p>Every mapped custom mob drops exactly one trophy when <code>doMobLoot</code> is enabled. The drop is guaranteed; the challenge is the encounter, not a random grind.</p></div>
+      <div class="finale-banner"><div><span>Final advancement</span><h3>Every Echo Preserved</h3><p>Carry all 26 trophies simultaneously. This is the canonical end of the current progression.</p></div><strong id="archive-total">26 / 26</strong></div>
+      <div id="trophy-grid" class="trophy-grid"></div>
+    </section>
+
+    <section id="reference" class="section searchable" data-search="reference commands controls troubleshooting requirements server install">
+      <div class="section-heading"><p class="eyebrow">Field reference</p><h2>Commands, rituals & troubleshooting</h2></div>
+      <div class="reference-grid">
+        <article><h3>Boss restoration</h3><ul class="clean-list"><li><b>Omega:</b> use an Altar Heart on the activated altar when no Omega lives nearby.</li><li><b>Diablo:</b> use four Vein Essences on the central Seal Cryoice after victory.</li><li><b>Angel Boy:</b> charge four cardinal reliquaries with Seraphic Pinions, then offer a Ruby Halo Shard.</li><li><b>Mossbound:</b> charge four pedestals with Rootbound Eyes, then offer a Moonflower Heart.</li></ul></article>
+        <article><h3>Structure puzzles</h3><ul class="clean-list"><li>Sequence keypads reset their group after a wrong input.</li><li>Energy relays transmit redstone to barriers and trial triggers.</li><li>Reward vaults unlock only after their local trial resolves.</li><li>Dormant spawners create bounded living waves when activated.</li></ul></article>
+        <article><h3>Server rules</h3><ul class="clean-list"><li><code>doMobLoot=false</code> suppresses trophies.</li><li>Custom boss state and cooldowns survive save/reload.</li><li>Combat abilities are server-authoritative and avoid block grief.</li><li>Mod structures are intentionally more common than their earlier versions.</li></ul></article>
+        <article><h3>If something looks wrong</h3><ul class="clean-list"><li>Use Fabric Loader for Minecraft 1.20.1 and the bundled dependency versions.</li><li>Do not install both a development classes build and an old mod JAR.</li><li>Generate a new world to inspect changed world generation.</li><li>Run <code>./gradlew build</code> to validate Java and resources.</li></ul></article>
+      </div>
+      <footer><div><b>OPUS vs EXE</b><p>Documentation generated from the current repository · 26 August 2026</p></div><a href="#top">Return to top ↑</a></footer>
+    </section>
+    <div class="no-results" id="no-results" hidden>No archive entries match that search.</div>
+  </main>
+
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

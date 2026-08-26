@@ -1,0 +1,4 @@
+{
+  "structures": [{ "structure": "opusvsexe:japanese_settlement", "weight": 1 }],
+  "placement": { "type": "minecraft:random_spread", "spacing": 64, "separation": 40, "salt": 430826, "spread_type": "triangular" }
+}

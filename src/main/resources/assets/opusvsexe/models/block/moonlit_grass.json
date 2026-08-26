@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "opusvsexe:block/dark_forest/moonlit_soil",
+    "top": "opusvsexe:block/dark_forest/moonlit_grass_top",
+    "side": "opusvsexe:block/dark_forest/moonlit_grass_side"
+  }
+}

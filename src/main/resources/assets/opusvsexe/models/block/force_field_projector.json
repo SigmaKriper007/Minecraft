@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "opusvsexe:block/force_field_projector_base",
+    "base": "opusvsexe:block/force_field_projector_base",
+    "lens": "opusvsexe:block/force_field_projector_lens"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#lens"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#base"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#base"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#base"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#base"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#base"}
+      }
+    }
+  ]
+}

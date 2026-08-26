@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "opusvsexe:moonlit_soil",
+    "opusvsexe:moonlit_grass",
+    "opusvsexe:gloomwood_log",
+    "opusvsexe:gloomwood_leaves",
+    "opusvsexe:fountain_stone",
+    "opusvsexe:moon_fountain_core",
+    "opusvsexe:rootbound_pedestal",
+    "opusvsexe:gloomwood_sapling",
+    "opusvsexe:moonflower",
+    "opusvsexe:thorn_fern"
+  ]
+}

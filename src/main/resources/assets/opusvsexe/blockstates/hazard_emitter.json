@@ -1,1 +1,8 @@
-{"variants": {"": {"model": "opusvsexe:block/hazard_emitter"}}}
+{
+  "variants": {
+    "facing=north": {"model": "opusvsexe:block/hazard_emitter"},
+    "facing=south": {"model": "opusvsexe:block/hazard_emitter", "y": 180},
+    "facing=west": {"model": "opusvsexe:block/hazard_emitter", "y": 270},
+    "facing=east": {"model": "opusvsexe:block/hazard_emitter", "y": 90}
+  }
+}

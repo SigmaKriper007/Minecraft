@@ -5,7 +5,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "opusvsexe:kimi_laboratory/entrance",
+        "location": "opusvsexe:kimi_laboratory/main",
         "processors": "opusvsexe:lab_degradation",
         "projection": "rigid"
       }

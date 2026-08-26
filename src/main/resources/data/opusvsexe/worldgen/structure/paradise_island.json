@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#opusvsexe:has_paradise_island",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "start_pool": "opusvsexe:paradise_island/start",
+  "size": 1,
+  "start_height": {
+    "absolute": 148
+  },
+  "max_distance_from_center": 116,
+  "use_expansion_hack": false,
+  "terrain_adaptation": "none"
+}

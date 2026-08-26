@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,solved=false": { "model": "opusvsexe:block/sequence_keypad" },
+    "facing=east,solved=false": { "model": "opusvsexe:block/sequence_keypad", "y": 90 },
+    "facing=south,solved=false": { "model": "opusvsexe:block/sequence_keypad", "y": 180 },
+    "facing=west,solved=false": { "model": "opusvsexe:block/sequence_keypad", "y": 270 },
+    "facing=north,solved=true": { "model": "opusvsexe:block/sequence_keypad_solved" },
+    "facing=east,solved=true": { "model": "opusvsexe:block/sequence_keypad_solved", "y": 90 },
+    "facing=south,solved=true": { "model": "opusvsexe:block/sequence_keypad_solved", "y": 180 },
+    "facing=west,solved=true": { "model": "opusvsexe:block/sequence_keypad_solved", "y": 270 }
+  }
+}

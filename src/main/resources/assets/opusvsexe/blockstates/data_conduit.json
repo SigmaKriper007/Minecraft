@@ -1,1 +1,8 @@
-{"variants": {"": {"model": "opusvsexe:block/data_conduit"}}}
+{
+  "variants": {
+    "facing=north": {"model": "opusvsexe:block/data_conduit"},
+    "facing=south": {"model": "opusvsexe:block/data_conduit", "y": 180},
+    "facing=west": {"model": "opusvsexe:block/data_conduit", "y": 270},
+    "facing=east": {"model": "opusvsexe:block/data_conduit", "y": 90}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["PP ", "PS ", " S "],
+  "key": {
+    "P": { "item": "opusvsexe:titan_plate" },
+    "S": { "item": "opusvsexe:resonant_opus" }
+  },
+  "result": { "item": "opusvsexe:opus_axe" }
+}

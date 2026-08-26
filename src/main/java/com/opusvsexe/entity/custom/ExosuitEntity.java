@@ -1,8 +1,11 @@
 package com.opusvsexe.entity.custom;
 
+import com.opus.entity.BlasterBeamEntity;
+import com.opus.entity.PunchShockwaveEntity;
 import com.opus.network.ModNetwork;
 import com.opus.sound.ModSounds;
 import com.opusvsexe.inventory.ExoInventoryMenu;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -34,9 +37,13 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -70,19 +77,25 @@ import java.util.List;
  */
 public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
 
-    public static final int ABILITY_SLOTS = 3;
+    public static final int ABILITY_SLOTS = 4;
 
     private static final EntityDataAccessor<Integer> DATA_ENERGY =
             SynchedEntityData.defineId(ExosuitEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Byte> DATA_FLAGS =
             SynchedEntityData.defineId(ExosuitEntity.class, EntityDataSerializers.BYTE);
-    private static final EntityDataAccessor<Integer> DATA_COOLDOWNS =
+    private static final EntityDataAccessor<Long> DATA_COOLDOWNS =
+            SynchedEntityData.defineId(ExosuitEntity.class, EntityDataSerializers.LONG);
+    private static final EntityDataAccessor<Integer> DATA_ABILITY_ANIM =
             SynchedEntityData.defineId(ExosuitEntity.class, EntityDataSerializers.INT);
 
     private static final int FLAG_ATTACKING = 1;
     private static final int FLAG_SPRINTING = 2;
     private static final int FLAG_SHIELD = 4;
     private static final int FLAG_OVERLOAD = 8;
+    private static final int FLAG_PUNCHING = 16;
+
+    public static final int PUNCH_COOLDOWN_TICKS = 60;
+    private static final int PUNCH_BASE_ENERGY = 60;
 
     private static final int COOLDOWN_BITS = 10;
     private static final int COOLDOWN_MASK = (1 << COOLDOWN_BITS) - 1;
@@ -90,12 +103,19 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
     private static final RawAnimation IDLE_ANIM = RawAnimation.begin().thenLoop("idle");
     private static final RawAnimation WALK_ANIM = RawAnimation.begin().thenLoop("walk");
     private static final RawAnimation ATTACK_ANIM = RawAnimation.begin().thenPlay("attack");
+    private static final RawAnimation HURT_ANIM = RawAnimation.begin().thenPlay("hurt");
+    private static final RawAnimation DEATH_ANIM = RawAnimation.begin().thenPlay("death");
+    private static final RawAnimation BLOCK_ANIM = RawAnimation.begin().thenLoop("block");
+    private static final RawAnimation PUNCH_ANIM = RawAnimation.begin().thenPlay("punch");
 
     protected final ExoTier tier;
 
     private final ExoContainer inventory = new ExoContainer();
     private final AnimatableInstanceCache animatableCache = GeckoLibUtil.createInstanceCache(this);
     private final int[] cooldowns = new int[ABILITY_SLOTS];
+
+    private RawAnimation cachedAbilityAnim;
+    private int cachedAbilityAnimSlot = -1;
 
     private int attackTicks;
     private int attackCooldown;
@@ -105,6 +125,10 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
     private int overloadTicks;
     private int airThrusts;
     private boolean sprintInput;
+    private int abilityAnimTicks;
+    private int activeAbilitySlot = -1;
+    private int punchTicks;
+    private int punchCooldown;
 
     protected ExosuitEntity(EntityType<? extends Mob> entityType, Level level, ExoTier tier) {
         super(entityType, level);
@@ -135,7 +159,8 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         super.defineSynchedData();
         this.entityData.define(DATA_ENERGY, 0);
         this.entityData.define(DATA_FLAGS, (byte) 0);
-        this.entityData.define(DATA_COOLDOWNS, 0);
+        this.entityData.define(DATA_COOLDOWNS, 0L);
+        this.entityData.define(DATA_ABILITY_ANIM, 0);
     }
 
     public ExoTier getTier() {
@@ -202,6 +227,10 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         return this.getFlag(FLAG_OVERLOAD);
     }
 
+    public boolean isPunching() {
+        return this.getFlag(FLAG_PUNCHING);
+    }
+
     protected void activateShield(int ticks) {
         this.shieldTicks = ticks;
         this.setFlag(FLAG_SHIELD, true);
@@ -216,13 +245,13 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         if (slot < 0 || slot >= ABILITY_SLOTS) {
             return 0;
         }
-        return (this.entityData.get(DATA_COOLDOWNS) >>> (slot * COOLDOWN_BITS)) & COOLDOWN_MASK;
+        return (int) ((this.entityData.get(DATA_COOLDOWNS) >>> (slot * COOLDOWN_BITS)) & COOLDOWN_MASK);
     }
 
     private void syncCooldowns() {
-        int packed = 0;
+        long packed = 0L;
         for (int slot = 0; slot < ABILITY_SLOTS; slot++) {
-            packed |= Math.min(this.cooldowns[slot], COOLDOWN_MASK) << (slot * COOLDOWN_BITS);
+            packed |= (long) Math.min(this.cooldowns[slot], COOLDOWN_MASK) << (slot * COOLDOWN_BITS);
         }
         this.entityData.set(DATA_COOLDOWNS, packed);
     }
@@ -305,6 +334,9 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         if (this.attackTicks > 0) {
             this.attackTicks--;
         }
+        if (this.punchTicks > 0) {
+            this.punchTicks--;
+        }
         if (this.onGround()) {
             this.airThrusts = 0;
         }
@@ -313,14 +345,23 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
             if (this.isAttacking() && this.attackTicks <= 0) {
                 this.attackTicks = 10;
             }
+            if (this.isPunching() && this.punchTicks <= 0) {
+                this.punchTicks = 14;
+            }
             return;
         }
 
         if (this.attackCooldown > 0) {
             this.attackCooldown--;
         }
+        if (this.punchCooldown > 0) {
+            this.punchCooldown--;
+        }
         if (this.attackTicks <= 0 && this.isAttacking()) {
             this.setFlag(FLAG_ATTACKING, false);
+        }
+        if (this.punchTicks <= 0 && this.isPunching()) {
+            this.setFlag(FLAG_PUNCHING, false);
         }
 
         if (this.isVehicle()) {
@@ -332,8 +373,15 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         this.tickCooldowns();
         this.tickEnergy();
 
+        if (this.abilityAnimTicks > 0 && --this.abilityAnimTicks == 0) {
+            this.activeAbilitySlot = -1;
+            this.entityData.set(DATA_ABILITY_ANIM, 0);
+        }
+
         if (this.shieldTicks > 0 && --this.shieldTicks == 0) {
             this.setFlag(FLAG_SHIELD, false);
+        } else if (this.isShieldActive()) {
+            this.tickEnergyBarrier();
         }
         if (this.overloadTicks > 0 && --this.overloadTicks == 0) {
             this.setFlag(FLAG_OVERLOAD, false);
@@ -479,7 +527,7 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
             }
             this.consumeEnergy(ExoTier.AIR_THRUST_COST);
             this.airThrusts++;
-            this.playSound(ModSounds.EXO_THRUST, 1.2F, 1.35F);
+            this.playSound(ModSounds.EXO_THRUST, 1.0F, 1.35F);
             this.spawnBurst(ParticleTypes.CLOUD, 14, 0.35D);
         } else {
             if (!this.hasEnergy(ExoTier.JUMP_COST)) {
@@ -494,6 +542,157 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         if (this.level() instanceof ServerLevel server) {
             server.sendParticles(particle, this.getX(), this.getY() + 0.25D, this.getZ(), count, spread, 0.1D, spread, 0.05D);
         }
+    }
+
+    // ------------------------------------------------------------------
+    // shared abilities
+    // ------------------------------------------------------------------
+
+    /**
+     * Energy Shield: absorption IV for the pilot plus a green energy barrier
+     * around the frame. The barrier is a particle shell sized from the suit's
+     * bounding box, so every model gets its own scale automatically.
+     */
+    protected void activateEnergyShield(ServerPlayer pilot) {
+        int duration = 200;
+        this.activateShield(duration);
+        if (pilot != null) {
+            pilot.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, duration, 3, false, true));
+        }
+        this.playSound(ModSounds.EXO_SHIELD, 1.0F, 1.0F);
+        if (this.level() instanceof ServerLevel server) {
+            double radius = this.barrierRadius();
+            server.sendParticles(ParticleTypes.HAPPY_VILLAGER,
+                    this.getX(), this.getY() + this.getBbHeight() * 0.5D, this.getZ(),
+                    (int) (24 + radius * 10), radius * 0.9D, this.getBbHeight() * 0.45D, radius * 0.9D, 0.02D);
+        }
+    }
+
+    /** Radius of the shield barrier, derived from the model footprint. */
+    private double barrierRadius() {
+        return Math.max(1.1D, this.getBbWidth() * 1.05D);
+    }
+
+    /**
+     * Green barrier shell while the shield is up. Golden-angle spiral keeps the
+     * sphere deterministic; white END_ROD appears sparingly as the core hotspot.
+     */
+    private void tickEnergyBarrier() {
+        if ((this.tickCount & 3) != 0 || !(this.level() instanceof ServerLevel server)) {
+            return;
+        }
+        double radius = this.barrierRadius();
+        double height = this.getBbHeight();
+        int points = (int) (14 + radius * 8);
+        double goldenAngle = Math.PI * (3.0D - Math.sqrt(5.0D));
+        for (int i = 0; i < points; i++) {
+            double phi = goldenAngle * i + this.tickCount * 0.7D;
+            double band = 2.0D * i / (points - 1) - 1.0D;
+            double ring = Math.sqrt(Math.max(0.0D, 1.0D - band * band));
+            double x = this.getX() + Math.cos(phi) * ring * radius;
+            double z = this.getZ() + Math.sin(phi) * ring * radius;
+            double y = this.getY() + (band * 0.5D + 0.55D) * height;
+            server.sendParticles(ParticleTypes.HAPPY_VILLAGER, x, y, z, 1, 0.0D, 0.0D, 0.0D, 0.0D);
+            if ((i & 7) == 0) {
+                server.sendParticles(ParticleTypes.COMPOSTER, x, y, z, 1, 0.05D, 0.05D, 0.05D, 0.0D);
+            }
+        }
+        if ((this.tickCount & 7) == 0) {
+            server.sendParticles(ParticleTypes.END_ROD,
+                    this.getX(), this.getY() + height * 0.62D, this.getZ(), 1, 0.1D, 0.1D, 0.1D, 0.0D);
+        }
+    }
+
+    /**
+     * Dash: a ~{@code distance}-block charge along the pilot's aim. Everything
+     * in the corridor is blown apart, entities inside take heavy damage, and the
+     * suit itself flies forward via {@link #applyImpulse(Vec3)}.
+     */
+    protected void performDash(ServerPlayer pilot, double distance, float damageScale) {
+        Vec3 look = pilot != null ? pilot.getViewVector(1.0F) : this.getLookAngle();
+        Vec3 dir = look.normalize();
+        Vec3 start = this.position().add(0.0D, this.getBbHeight() * 0.5D, 0.0D);
+        Vec3 end = start.add(dir.scale(distance));
+        double radius = Math.max(1.2D, this.getBbWidth() * 0.9D);
+
+        this.breakDashCorridor(start, dir, distance, radius);
+
+        AABB corridor = new AABB(start, end).inflate(radius + 0.5D);
+        for (LivingEntity target : this.level().getEntitiesOfClass(LivingEntity.class, corridor,
+                entity -> this.isValidCombatTarget(entity, pilot))) {
+            if (target.hurt(this.damageSources().mobAttack(this), this.getAttackDamage() * damageScale)) {
+                target.knockback(1.2D, this.getX() - target.getX(), this.getZ() - target.getZ());
+                target.addDeltaMovement(new Vec3(dir.x * 0.8D, 0.3D, dir.z * 0.8D));
+            }
+        }
+
+        float speed = (float) (distance / 11.0D);
+        this.applyImpulse(dir.scale(speed));
+
+        this.playSound(ModSounds.EXO_THRUST, 1.2F, 0.7F);
+        this.level().playSound(null, this.getX(), this.getY(), this.getZ(),
+                net.minecraft.sounds.SoundEvents.GENERIC_EXPLODE, this.getSoundSource(), 1.0F, 1.1F);
+        if (this.level() instanceof ServerLevel server) {
+            for (double d = 2.0D; d <= distance; d += 4.0D) {
+                Vec3 point = start.add(dir.scale(d));
+                server.sendParticles(ParticleTypes.EXPLOSION_EMITTER, point.x, point.y, point.z, 1, 0.2D, 0.2D, 0.2D, 0.0D);
+            }
+            this.spawnBurst(ParticleTypes.CLOUD, 16, 0.6D);
+        }
+    }
+
+    /** Destroys every breakable block inside the dash corridor. */
+    private void breakDashCorridor(Vec3 start, Vec3 dir, double distance, double radius) {
+        if (!(this.level() instanceof ServerLevel server)) {
+            return;
+        }
+        for (double d = 0.0D; d <= distance; d += 0.5D) {
+            Vec3 point = start.add(dir.scale(d));
+            BlockPos center = BlockPos.containing(point.x, point.y, point.z);
+            for (BlockPos pos : BlockPos.betweenClosed(
+                    center.offset((int) -radius, (int) -radius, (int) -radius),
+                    center.offset((int) radius, (int) radius, (int) radius))) {
+                BlockState state = server.getBlockState(pos);
+                if (state.isAir() || state.getDestroySpeed(server, pos) < 0.0F
+                        || state.liquid() || server.getBlockEntity(pos) != null) {
+                    continue;
+                }
+                server.destroyBlock(pos.immutable(), false);
+            }
+        }
+    }
+
+    /**
+     * Fires a directional beam entity from the chest along the pilot's aim.
+     * Shared by the heavy laser style abilities (EXO-2 Cutting Laser, EXO-5).
+     */
+    protected void spawnDirectionalBeam(BlasterBeamEntity beam, ServerPlayer pilot,
+                                        net.minecraft.sounds.SoundEvent sound, float volume, float pitch) {
+        Level level = this.level();
+        Vec3 eye = this.getEyePosition(1.0F);
+        Vec3 look = pilot != null ? pilot.getViewVector(1.0F) : this.getLookAngle();
+        double range = 75.0D;
+        double spawnOffset = 1.2D;
+        Vec3 spawn = eye.add(look.scale(spawnOffset));
+
+        BlockHitResult hit = level.clip(new ClipContext(eye, eye.add(look.scale(range)),
+                ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this));
+        double beamLength;
+        if (hit.getType() == HitResult.Type.MISS) {
+            beamLength = range - spawnOffset;
+        } else {
+            beamLength = Math.max(1.0D, eye.distanceTo(hit.getLocation()) - spawnOffset);
+        }
+
+        beam.setPos(spawn);
+        beam.faceTo(pilot != null ? pilot.getYRot() : this.getYRot(), pilot != null ? pilot.getXRot() : this.getXRot());
+        beam.setDeltaMovement(beam.getBeamDirection());
+        beam.setSyncedDirection(beam.getBeamDirection());
+        beam.setShooter(pilot != null ? pilot.getUUID() : this.getUUID());
+        beam.setBeamLength((float) beamLength);
+        level.addFreshEntity(beam);
+
+        this.playSound(sound, volume, pitch);
     }
 
     // ------------------------------------------------------------------
@@ -517,6 +716,27 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         }
         this.setTarget(target);
         this.doHurtTarget(target);
+    }
+
+    /** Hidden B-key action shared by all frames; separate from the four HUD ability slots. */
+    public void tryResonancePunch(ServerPlayer pilot) {
+        if (this.level().isClientSide || !this.isPilot(pilot) || !this.isAlive()) {
+            return;
+        }
+        if (this.punchCooldown > 0) {
+            this.feedback(pilot, "message.opusvsexe.exo.punch_cooldown");
+            return;
+        }
+        int energyCost = PUNCH_BASE_ENERGY + this.tier.ordinal() * 20;
+        if (!this.hasEnergy(energyCost)) {
+            this.feedback(pilot, "message.opusvsexe.exo.no_energy");
+            return;
+        }
+        this.consumeEnergy(energyCost);
+        this.punchCooldown = PUNCH_COOLDOWN_TICKS;
+        this.punchTicks = 14;
+        this.setFlag(FLAG_PUNCHING, true);
+        PunchShockwaveEntity.spawn(this, pilot);
     }
 
     @Override
@@ -636,6 +856,32 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         return true;
     }
 
+    /**
+     * Animation name played when ability {@code slot} fires. Returns {@code null}
+     * by default, so suits without ability animations keep their old behaviour.
+     * Exo+ overrides this to map each slot to its dedicated ability animation.
+     */
+    protected String abilityAnimName(int slot) {
+        return null;
+    }
+
+    /** How long (in ticks) the ability animation flag stays raised. */
+    protected int abilityAnimDuration(int slot) {
+        return 20;
+    }
+
+    /** Which slot is currently animating, or -1. Read by the client via synced data. */
+    public int getAbilityAnimSlot() {
+        int value = this.entityData.get(DATA_ABILITY_ANIM);
+        return value > 0 ? value - 1 : -1;
+    }
+
+    protected void startAbilityAnim(int slot) {
+        this.activeAbilitySlot = slot;
+        this.abilityAnimTicks = this.abilityAnimDuration(slot);
+        this.entityData.set(DATA_ABILITY_ANIM, slot + 1);
+    }
+
     public void tryUseAbility(int slot, ServerPlayer pilot) {
         if (this.level().isClientSide || !this.isPilot(pilot) || slot < 0 || slot >= ABILITY_SLOTS) {
             return;
@@ -660,6 +906,7 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         this.cooldowns[slot] = ability.cooldown();
         this.syncCooldowns();
         this.runAbility(slot, pilot);
+        this.startAbilityAnim(slot);
     }
 
     protected void feedback(ServerPlayer pilot, String translationKey) {
@@ -730,6 +977,7 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
             this.setExoSprint(false);
             this.setTarget(null);
             this.setFlag(FLAG_ATTACKING, false);
+            this.setFlag(FLAG_PUNCHING, false);
         }
     }
 
@@ -842,6 +1090,7 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         tag.putInt("ExoEnergy", this.getEnergy());
         tag.putInt("ExoShield", this.shieldTicks);
         tag.putInt("ExoOverload", this.overloadTicks);
+        tag.putInt("ExoPunchCooldown", this.punchCooldown);
         tag.put("ExoItems", this.inventory.createTag());
     }
 
@@ -856,6 +1105,7 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
         }
         this.shieldTicks = tag.getInt("ExoShield");
         this.overloadTicks = tag.getInt("ExoOverload");
+        this.punchCooldown = tag.getInt("ExoPunchCooldown");
         this.setFlag(FLAG_SHIELD, this.shieldTicks > 0);
         this.setFlag(FLAG_OVERLOAD, this.overloadTicks > 0);
     }
@@ -918,14 +1168,59 @@ public abstract class ExosuitEntity extends Mob implements GeoAnimatable {
     }
 
     protected PlayState animationPredicate(AnimationState<ExosuitEntity> state) {
+        AnimationController<ExosuitEntity> controller = state.getController();
+
+        if (this.isDeadOrDying()) {
+            this.playOnce(state, DEATH_ANIM, false);
+            return PlayState.CONTINUE;
+        }
+
+        if (this.isPunching() || this.punchTicks > 0) {
+            this.playOnce(state, PUNCH_ANIM, true);
+            return PlayState.CONTINUE;
+        }
+
+        int abilitySlot = this.getAbilityAnimSlot();
+        if (abilitySlot >= 0) {
+            String animName = this.abilityAnimName(abilitySlot);
+            if (animName != null) {
+                if (this.cachedAbilityAnim == null || this.cachedAbilityAnimSlot != abilitySlot) {
+                    this.cachedAbilityAnim = RawAnimation.begin().thenPlay(animName);
+                    this.cachedAbilityAnimSlot = abilitySlot;
+                }
+                this.playOnce(state, this.cachedAbilityAnim, true);
+                return PlayState.CONTINUE;
+            }
+        }
+
         if (this.attackTicks > 0) {
-            state.getController().setAnimation(ATTACK_ANIM);
+            this.playOnce(state, ATTACK_ANIM, true);
+        } else if (this.hurtTime > 0) {
+            this.playOnce(state, HURT_ANIM, true);
+        } else if (this.isShieldActive()) {
+            controller.setAnimation(BLOCK_ANIM);
         } else if (state.isMoving()) {
-            state.getController().setAnimation(WALK_ANIM);
+            controller.setAnimation(WALK_ANIM);
         } else {
-            state.getController().setAnimation(IDLE_ANIM);
+            controller.setAnimation(IDLE_ANIM);
         }
         return PlayState.CONTINUE;
+    }
+
+    /**
+     * Безопасный запуск анимации с принудительным сбросом. GeckoLib 4.4.9 не
+     * перезапускает одноразовую анимацию с тем же RawAnimation — поэтому при
+     * повторном запуске (attack/hurt/ability) выполняется forceAnimationReset.
+     * {@code repeat=false} для смерти: сыграть один раз и остаться на последнем кадре.
+     */
+    protected <T extends GeoAnimatable> void playOnce(AnimationState<T> state, RawAnimation anim, boolean repeat) {
+        AnimationController<T> controller = state.getController();
+        RawAnimation current = controller.getCurrentRawAnimation();
+        boolean finished = controller.hasAnimationFinished();
+        if (current == null || !current.equals(anim) || (repeat && finished)) {
+            controller.forceAnimationReset();
+        }
+        controller.setAnimation(anim);
     }
 
     @Override

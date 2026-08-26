@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "opusvsexe:block/ember_sapling"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "opusvsexe:block/ember_log_top",
+    "side": "opusvsexe:block/ember_log_side"
+  }
+}

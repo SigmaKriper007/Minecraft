@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["EE ", " S ", " S "],
+  "key": {
+    "E": { "item": "opusvsexe:fire_essence" },
+    "S": { "item": "minecraft:blaze_rod" }
+  },
+  "result": { "item": "opusvsexe:fire_hoe" }
+}

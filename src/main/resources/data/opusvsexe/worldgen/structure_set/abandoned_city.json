@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "opusvsexe:abandoned_city",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 90,
+    "separation": 55,
+    "salt": 12011,
+    "spread_type": "triangular"
+  }
+}

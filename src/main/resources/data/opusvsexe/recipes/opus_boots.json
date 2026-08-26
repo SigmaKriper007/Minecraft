@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["P P", "R R"],
+  "key": {
+    "P": { "item": "opusvsexe:titan_plate" },
+    "R": { "item": "opusvsexe:resonant_opus" }
+  },
+  "result": { "item": "opusvsexe:opus_boots" }
+}

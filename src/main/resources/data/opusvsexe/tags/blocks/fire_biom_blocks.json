@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "opusvsexe:fire_soil",
+    "opusvsexe:magma_crust",
+    "opusvsexe:ash_block",
+    "opusvsexe:ember_log",
+    "opusvsexe:ember_leaves",
+    "opusvsexe:ember_sapling",
+    "opusvsexe:fire_vine",
+    "opusvsexe:fire_bean",
+    "opusvsexe:crimson_ice",
+    "opusvsexe:fire_portal"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "faf",
+    "aca",
+    "faf"
+  ],
+  "key": {
+    "f": {
+      "item": "opusvsexe:opus_fragment"
+    },
+    "a": {
+      "item": "opusvsexe:ai_tear"
+    },
+    "c": {
+      "item": "opusvsexe:core_opus"
+    }
+  },
+  "result": {
+    "item": "opusvsexe:haiku_core",
+    "count": 1
+  }
+}

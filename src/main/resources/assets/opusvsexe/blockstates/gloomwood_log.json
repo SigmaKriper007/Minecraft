@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "opusvsexe:block/gloomwood_log"
+    },
+    "axis=x": {
+      "model": "opusvsexe:block/gloomwood_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z": {
+      "model": "opusvsexe:block/gloomwood_log",
+      "x": 90
+    }
+  }
+}

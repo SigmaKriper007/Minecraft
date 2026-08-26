@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["  I", " I ", "SL "],
+  "key": { "I": { "item": "minecraft:iron_ingot" }, "S": { "item": "minecraft:stick" }, "L": { "item": "minecraft:leather" } },
+  "result": { "item": "opusvsexe:katana" }
+}

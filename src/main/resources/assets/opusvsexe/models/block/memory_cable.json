@@ -1,1 +1,61 @@
-{"parent": "minecraft:block/cube_all", "textures": {"all": "opusvsexe:block/memory_cable"}}
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "opusvsexe:block/memory_cable",
+    "cable": "opusvsexe:block/memory_cable"
+  },
+  "elements": [
+    {
+      "comment": "Крепёжная плашка у стены",
+      "from": [0, 3, 13],
+      "to": [16, 14, 16],
+      "faces": {
+        "north": {"uv": [0, 3, 16, 14], "texture": "#cable"},
+        "south": {"uv": [0, 3, 16, 14], "texture": "#cable"},
+        "east": {"uv": [13, 3, 16, 14], "texture": "#cable"},
+        "west": {"uv": [13, 3, 16, 14], "texture": "#cable"},
+        "up": {"uv": [0, 13, 16, 16], "texture": "#cable"},
+        "down": {"uv": [0, 13, 16, 16], "texture": "#cable"}
+      }
+    },
+    {
+      "comment": "Верхний канал данных (циан)",
+      "from": [0, 11, 10],
+      "to": [16, 14, 13],
+      "faces": {
+        "north": {"uv": [0, 11, 16, 14], "texture": "#cable"},
+        "south": {"uv": [0, 11, 16, 14], "texture": "#cable"},
+        "east": {"uv": [10, 11, 13, 14], "texture": "#cable"},
+        "west": {"uv": [10, 11, 13, 14], "texture": "#cable"},
+        "up": {"uv": [0, 10, 16, 13], "texture": "#cable"},
+        "down": {"uv": [0, 10, 16, 13], "texture": "#cable"}
+      }
+    },
+    {
+      "comment": "Средний канал данных (красный)",
+      "from": [0, 7, 10],
+      "to": [16, 10, 13],
+      "faces": {
+        "north": {"uv": [0, 7, 16, 10], "texture": "#cable"},
+        "south": {"uv": [0, 7, 16, 10], "texture": "#cable"},
+        "east": {"uv": [10, 7, 13, 10], "texture": "#cable"},
+        "west": {"uv": [10, 7, 13, 10], "texture": "#cable"},
+        "up": {"uv": [0, 7, 16, 10], "texture": "#cable"},
+        "down": {"uv": [0, 7, 16, 10], "texture": "#cable"}
+      }
+    },
+    {
+      "comment": "Нижний канал данных (маджента)",
+      "from": [0, 3, 10],
+      "to": [16, 6, 13],
+      "faces": {
+        "north": {"uv": [0, 3, 16, 6], "texture": "#cable"},
+        "south": {"uv": [0, 3, 16, 6], "texture": "#cable"},
+        "east": {"uv": [10, 3, 13, 6], "texture": "#cable"},
+        "west": {"uv": [10, 3, 13, 6], "texture": "#cable"},
+        "up": {"uv": [0, 3, 16, 6], "texture": "#cable"},
+        "down": {"uv": [0, 3, 16, 6], "texture": "#cable"}
+      }
+    }
+  ]
+}

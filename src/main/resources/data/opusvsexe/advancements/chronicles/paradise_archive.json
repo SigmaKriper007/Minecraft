@@ -1,0 +1,19 @@
+{
+  "parent": "opusvsexe:chronicles/root",
+  "display": {
+    "icon": { "item": "opusvsexe:trophy_sunfinch" },
+    "title": { "translate": "advancement.opusvsexe.chronicles.paradise.title" },
+    "description": { "translate": "advancement.opusvsexe.chronicles.paradise.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "sunfinch": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_sunfinch"] }] } },
+    "cloud_grazer": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_cloud_grazer"] }] } },
+    "paradise_wyvern": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_paradise_wyvern"] }] } },
+    "angel_boy": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_angel_boy"] }] } }
+  },
+  "rewards": { "experience": 100 }
+}

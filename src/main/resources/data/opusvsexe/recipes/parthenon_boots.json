@@ -1,0 +1,11 @@
+{
+  "type": "opusvsexe:parthenon_forging",
+  "pattern": [" R ", "DAD", "G G"],
+  "key": {
+    "D": { "item": "minecraft:diamond" },
+    "R": { "item": "opusvsexe:ruby_halo_shard" },
+    "G": { "item": "opusvsexe:gilded_marble" },
+    "A": { "item": "opusvsexe:aerie_bronze_boots" }
+  },
+  "result": { "item": "opusvsexe:parthenon_boots" }
+}

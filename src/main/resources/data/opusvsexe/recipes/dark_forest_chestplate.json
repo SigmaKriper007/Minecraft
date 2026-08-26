@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "opusvsexe:briarweave_chestplate"
+    },
+    {
+      "item": "opusvsexe:rootbound_eye"
+    },
+    {
+      "item": "opusvsexe:moonflower_heart"
+    }
+  ],
+  "result": {
+    "item": "opusvsexe:dark_forest_chestplate"
+  }
+}

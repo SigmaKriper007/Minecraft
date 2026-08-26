@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/barrier",
+  "textures": {
+    "particle": "opusvsexe:block/altar_heart"
+  }
+}

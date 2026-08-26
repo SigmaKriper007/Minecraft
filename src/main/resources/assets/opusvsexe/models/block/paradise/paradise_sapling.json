@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "opusvsexe:block/paradise/paradise_sapling"
+  }
+}

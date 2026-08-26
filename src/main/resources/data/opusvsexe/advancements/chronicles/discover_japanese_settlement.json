@@ -1,0 +1,6 @@
+{
+  "parent":"opusvsexe:chronicles/survivor_archive",
+  "display":{"icon":{"item":"opusvsexe:katana"},"title":{"translate":"advancement.opusvsexe.chronicles.discover_japanese.title"},"description":{"translate":"advancement.opusvsexe.chronicles.discover_japanese.description"},"frame":"task","show_toast":true,"announce_to_chat":true,"hidden":false},
+  "criteria":{"inside":{"trigger":"minecraft:location","conditions":{"player":{"location":{"structure":"opusvsexe:japanese_settlement"}}}}},
+  "rewards":{"experience":100}
+}

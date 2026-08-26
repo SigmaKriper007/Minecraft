@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "opusvsexe:katana_op",
+    "opusvsexe:katana_gold",
+    "opusvsexe:katana_refined",
+    "opusvsexe:opus_warhammer",
+    "opusvsexe:opus_pickaxe",
+    "opusvsexe:opus_axe",
+    "opusvsexe:opus_shovel",
+    "opusvsexe:opus_hoe",
+    "opusvsexe:light_laser_gun",
+    "opusvsexe:heavy_laser_gun",
+    "opusvsexe:sky_laser_gun"
+  ]
+}

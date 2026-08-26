@@ -1,0 +1,12 @@
+{
+  "type": "opusvsexe:parthenon_forging",
+  "pattern": ["SFS", "CGC", "SPS"],
+  "key": {
+    "S": { "item": "opusvsexe:sunfeather" },
+    "F": { "item": "opusvsexe:cloud_fleece" },
+    "C": { "item": "minecraft:copper_ingot" },
+    "G": { "item": "minecraft:gold_ingot" },
+    "P": { "item": "opusvsexe:paradise_fruit" }
+  },
+  "result": { "item": "opusvsexe:aerie_bronze_ingot", "count": 4 }
+}

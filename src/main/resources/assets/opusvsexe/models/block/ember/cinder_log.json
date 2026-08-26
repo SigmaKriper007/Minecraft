@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "opusvsexe:block/cinder_log_top",
+    "side": "opusvsexe:block/cinder_log_side"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "opusvsexe:fire_realm",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "opusvsexe:fire_biom",
+      "lakes": false,
+      "features": true,
+      "layers": [
+        {
+          "block": "minecraft:bedrock",
+          "height": 1
+        },
+        {
+          "block": "opusvsexe:magma_crust",
+          "height": 4
+        },
+        {
+          "block": "opusvsexe:fire_soil",
+          "height": 1
+        }
+      ]
+    }
+  }
+}

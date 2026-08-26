@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    " B ",
+    " S "
+  ],
+  "key": {
+    "B": {
+      "item": "opusvsexe:briarweave"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "opusvsexe:dark_forest_sword",
+    "count": 1
+  }
+}

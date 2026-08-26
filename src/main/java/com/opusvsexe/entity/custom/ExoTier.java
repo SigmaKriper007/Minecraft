@@ -12,8 +12,8 @@ public enum ExoTier {
     EXO_1("EXO-1 Sentinel",     60.0D,   500,  0.24D, 1.35D, 10.0F,  4.5D,   20,  0.62D, 1.0F,   6,    1,   0.6D,   8.0D, false),
     EXO_2("EXO-2 Hunter",       90.0D,   700,  0.32D, 1.60D, 12.0F,  5.0D,   16,  0.70D, 1.0F,   7,    2,   0.6D,  10.0D, true),
     EXO_3("EXO-3 Vanguard",    140.0D,   900,  0.28D, 1.45D, 15.0F,  6.0D,   20,  0.78D, 1.5F,   8,    2,   0.8D,  14.0D, true),
-    EXO_4("EXO-4 Titan",       220.0D,  1200,  0.24D, 1.30D, 18.0F,  7.5D,   24,  0.85D, 2.0F,   9,    3,   1.0D,  18.0D, false),
-    EXO_5("EXO-5 Vengeance",   350.0D,  2000,  0.30D, 1.50D, 20.0F,  9.0D,   20,  0.95D, 2.0F,  12,    3,   1.0D,  22.0D, true);
+    EXO_4("EXO-4 Titan",       220.0D,  1200, 0.24D, 1.30D, 18.0F,  7.5D,   24,  0.85D, 2.0F,   9,    3,   1.0D,  18.0D, false),
+    EXO_5("EXO-5 Vengeance",   400.0D,  2500, 0.28D, 1.45D, 24.0F, 10.0D,   18,  1.05D, 2.0F,  14,    4,   1.0D,  24.0D, true);
 
     /** Energy burned by a normal mech hop. */
     public static final int JUMP_COST = 5;

@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "opusvsexe:paradise_island",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 110,
+    "separation": 70,
+    "salt": 310826,
+    "spread_type": "triangular"
+  }
+}

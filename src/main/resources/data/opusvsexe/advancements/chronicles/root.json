@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "opusvsexe:trophy_haiku_1_5"
+    },
+    "title": {
+      "translate": "advancement.opusvsexe.chronicles.root.title"
+    },
+    "description": {
+      "translate": "advancement.opusvsexe.chronicles.root.description"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "first_trophy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "opusvsexe:trophies"
+          }
+        ]
+      }
+    }
+  }
+}

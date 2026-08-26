@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=x": {"model": "opusvsexe:block/energy_beam", "x": 90, "y": 90},
+    "axis=y": {"model": "opusvsexe:block/energy_beam"},
+    "axis=z": {"model": "opusvsexe:block/energy_beam", "x": 90}
+  }
+}

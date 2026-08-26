@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EEE",
+    " ST",
+    " S "
+  ],
+  "key": {
+    "E": {
+      "item": "opusvsexe:fire_essence"
+    },
+    "S": {
+      "item": "minecraft:blaze_rod"
+    },
+    "T": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "opusvsexe:demonic_trident"
+  }
+}

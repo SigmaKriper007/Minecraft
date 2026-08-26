@@ -1,6 +1,14 @@
 package com.opus.client;
 
+import com.opus.fire.client.layer.FireChargeLayer;
+import com.opus.ember.client.layer.EmberChargeLayer;
+import com.opus.ember.item.EmberArmorBonus;
+import com.opus.ember.network.EmberNetwork;
+import com.opus.darkforest.item.DarkForestEquipmentBonus;
+import com.opus.darkforest.network.DarkForestNetwork;
 import com.opus.network.ModNetwork;
+import com.opus.paradise.item.ParthenonArmorBonus;
+import com.opus.paradise.network.ParadiseNetwork;
 import com.opusvsexe.entity.custom.ExosuitEntity;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -8,6 +16,7 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.entity.player.Player;
 
 /**
  * The single place that turns pilot input into packets.
@@ -30,10 +39,24 @@ public final class ExoInputHandler {
     public static void init() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             clientTicks++;
+            // FireChargeLayer tick (charge countdown)
+            FireChargeLayer.tickCharge();
+            // EmberChargeLayer tick (charge countdown)
+            EmberChargeLayer.tickCharge();
 
             // Opus armour shockwave works with or without a suit.
+            // V with the retained high-tier Ember suit fires its charged fireball.
             while (ExoKeybinds.ARMOR_SHOCKWAVE.consumeClick()) {
-                ClientPlayNetworking.send(ModNetwork.ARMOR_SHOCKWAVE, PacketByteBufs.empty());
+                Player local = client.player;
+                if (local != null && client.screen == null && DarkForestEquipmentBonus.isFullVestments(local)) {
+                    ClientPlayNetworking.send(DarkForestNetwork.VESTMENT_TELEPORT, PacketByteBufs.empty());
+                } else if(local!=null&&ParthenonArmorBonus.isFullSet(local)){
+                    ClientPlayNetworking.send(ParadiseNetwork.REGALIA_HURRICANE,PacketByteBufs.empty());
+                } else if (local != null && EmberArmorBonus.isFullEmberSuitClient(local)) {
+                    ClientPlayNetworking.send(EmberNetwork.EMBER_CHARGE, PacketByteBufs.empty());
+                } else {
+                    ClientPlayNetworking.send(ModNetwork.ARMOR_SHOCKWAVE, PacketByteBufs.empty());
+                }
             }
 
             if (client.player == null || !(client.player.getVehicle() instanceof ExosuitEntity exo)) {
@@ -50,6 +73,10 @@ public final class ExoInputHandler {
                 jumpWasDown = false;
                 drain();
                 return;
+            }
+
+            while (ExoKeybinds.EXO_PUNCH.consumeClick()) {
+                ClientPlayNetworking.send(ModNetwork.EXO_PUNCH, PacketByteBufs.empty());
             }
 
             for (int slot = 0; slot < ExoKeybinds.ABILITY.length; slot++) {
@@ -110,6 +137,9 @@ public final class ExoInputHandler {
             }
         }
         while (ExoKeybinds.EXO_INVENTORY != null && ExoKeybinds.EXO_INVENTORY.consumeClick()) {
+            // discard
+        }
+        while (ExoKeybinds.EXO_PUNCH != null && ExoKeybinds.EXO_PUNCH.consumeClick()) {
             // discard
         }
     }

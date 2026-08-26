@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=x": {"model": "opusvsexe:block/amber_pillar", "x": 90, "y": 90},
+    "axis=y": {"model": "opusvsexe:block/amber_pillar"},
+    "axis=z": {"model": "opusvsexe:block/amber_pillar", "x": 90}
+  }
+}

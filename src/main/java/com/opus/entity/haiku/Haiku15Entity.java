@@ -13,18 +13,51 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.object.PlayState;
 
 /**
  * Haiku 1.5 "Husk" - самый слабый и распространённый моб
  * ~1.7 блоков высотой, ближний бой, низкий урон
  * Иногда "глючит" - повторяет анимации/звуки
  */
-public class Haiku15Entity extends PathfinderMob {
-    
+public class Haiku15Entity extends HaikuMob {
+
+    private static final RawAnimation IDLE_ANIM = RawAnimation.begin().thenLoop("idle");
+    private static final RawAnimation WALK_ANIM = RawAnimation.begin().thenLoop("walk");
+    private static final RawAnimation ATTACK_ANIM = RawAnimation.begin().thenPlay("attack");
+    private static final RawAnimation DEATH_ANIM = RawAnimation.begin().thenPlay("death");
+
     public Haiku15Entity(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
     }
-    
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "husk_controller", 0, this::haiku15Predicate));
+    }
+
+    private PlayState haiku15Predicate(AnimationState<Haiku15Entity> state) {
+        Haiku15Entity self = state.getAnimatable();
+        if (self.isDeadOrDying()) {
+            playOnce(state, DEATH_ANIM, false);
+            return PlayState.CONTINUE;
+        }
+        if (self.swinging) {
+            playOnce(state, ATTACK_ANIM, true);
+            return PlayState.CONTINUE;
+        }
+        if (state.isMoving()) {
+            state.getController().setAnimation(WALK_ANIM);
+            return PlayState.CONTINUE;
+        }
+        state.getController().setAnimation(IDLE_ANIM);
+        return PlayState.CONTINUE;
+    }
+
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0, false));
@@ -33,7 +66,7 @@ public class Haiku15Entity extends PathfinderMob {
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
     }
-    
+
     public static AttributeSupplier.Builder createAttributes() {
         return PathfinderMob.createMobAttributes()
             .add(Attributes.MAX_HEALTH, 20.0)
@@ -41,7 +74,7 @@ public class Haiku15Entity extends PathfinderMob {
             .add(Attributes.ATTACK_DAMAGE, 3.0)
             .add(Attributes.FOLLOW_RANGE, 35.0);
     }
-    
+
     @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
         return 1.5f;

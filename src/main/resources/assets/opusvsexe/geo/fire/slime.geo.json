@@ -1,0 +1,346 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.slime",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          0.8,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "shell",
+          "pivot": [
+            0,
+            7,
+            0
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                1,
+                -7
+              ],
+              "size": [
+                16,
+                12,
+                14
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            },
+            {
+              "origin": [
+                -6,
+                13,
+                -5
+              ],
+              "size": [
+                12,
+                2,
+                10
+              ],
+              "uv": [
+                0,
+                28
+              ]
+            }
+          ]
+        },
+        {
+          "name": "skirt",
+          "pivot": [
+            0,
+            2,
+            0
+          ],
+          "parent": "shell",
+          "cubes": [
+            {
+              "origin": [
+                -9,
+                0,
+                -8
+              ],
+              "size": [
+                18,
+                4,
+                16
+              ],
+              "uv": [
+                0,
+                40
+              ]
+            }
+          ]
+        },
+        {
+          "name": "core",
+          "pivot": [
+            0,
+            7,
+            0
+          ],
+          "parent": "shell",
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                4,
+                -3
+              ],
+              "size": [
+                6,
+                6,
+                6
+              ],
+              "uv": [
+                40,
+                0
+              ],
+              "inflate": 0.2
+            }
+          ]
+        },
+        {
+          "name": "brow_l",
+          "pivot": [
+            -3,
+            11,
+            -7
+          ],
+          "parent": "shell",
+          "rotation": [
+            0,
+            0,
+            -8
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -5,
+                10,
+                -7.6
+              ],
+              "size": [
+                4,
+                1,
+                1
+              ],
+              "uv": [
+                40,
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "name": "brow_r",
+          "pivot": [
+            3,
+            11,
+            -7
+          ],
+          "parent": "shell",
+          "rotation": [
+            0,
+            0,
+            8
+          ],
+          "cubes": [
+            {
+              "origin": [
+                1,
+                10,
+                -7.6
+              ],
+              "size": [
+                4,
+                1,
+                1
+              ],
+              "uv": [
+                40,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mouth",
+          "pivot": [
+            0,
+            6,
+            -7
+          ],
+          "parent": "shell",
+          "cubes": [
+            {
+              "origin": [
+                -2,
+                5,
+                -7.7
+              ],
+              "size": [
+                4,
+                1,
+                1
+              ],
+              "uv": [
+                40,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "name": "crack_0",
+          "pivot": [
+            -5,
+            5,
+            -7
+          ],
+          "parent": "shell",
+          "rotation": [
+            0,
+            0,
+            -28
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -5,
+                5,
+                -7.8
+              ],
+              "size": [
+                1,
+                4,
+                1
+              ],
+              "uv": [
+                48,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "name": "crack_1",
+          "pivot": [
+            4,
+            7,
+            -7
+          ],
+          "parent": "shell",
+          "rotation": [
+            0,
+            0,
+            25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                4,
+                7,
+                -7.8
+              ],
+              "size": [
+                1,
+                4,
+                1
+              ],
+              "uv": [
+                50,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "name": "crack_2",
+          "pivot": [
+            -2,
+            12,
+            -7
+          ],
+          "parent": "shell",
+          "rotation": [
+            0,
+            0,
+            -12
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2,
+                12,
+                -7.8
+              ],
+              "size": [
+                1,
+                4,
+                1
+              ],
+              "uv": [
+                52,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "name": "crack_3",
+          "pivot": [
+            5,
+            3,
+            -7
+          ],
+          "parent": "shell",
+          "rotation": [
+            0,
+            0,
+            40
+          ],
+          "cubes": [
+            {
+              "origin": [
+                5,
+                3,
+                -7.8
+              ],
+              "size": [
+                1,
+                4,
+                1
+              ],
+              "uv": [
+                54,
+                18
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

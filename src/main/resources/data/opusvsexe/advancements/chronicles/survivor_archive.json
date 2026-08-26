@@ -1,0 +1,13 @@
+{
+  "parent": "opusvsexe:chronicles/dark_forest_archive",
+  "display": {
+    "icon": { "item": "opusvsexe:trophy_survivor" },
+    "title": { "translate": "advancement.opusvsexe.chronicles.survivor.title" },
+    "description": { "translate": "advancement.opusvsexe.chronicles.survivor.description" },
+    "frame": "challenge", "show_toast": true, "announce_to_chat": true, "hidden": false
+  },
+  "criteria": {
+    "survivor": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["opusvsexe:trophy_survivor"] }] } }
+  },
+  "rewards": { "experience": 100 }
+}

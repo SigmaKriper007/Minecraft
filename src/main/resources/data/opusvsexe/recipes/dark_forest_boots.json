@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "opusvsexe:briarweave_boots"
+    },
+    {
+      "item": "opusvsexe:rootbound_eye"
+    }
+  ],
+  "result": {
+    "item": "opusvsexe:dark_forest_boots"
+  }
+}

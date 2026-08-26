@@ -1,0 +1,311 @@
+{
+  "parent": "opusvsexe:chronicles/defeat_young_samurai",
+  "display": {
+    "icon": {
+      "item": "opusvsexe:trophy_haiku_omega"
+    },
+    "title": {
+      "translate": "advancement.opusvsexe.chronicles.all.title"
+    },
+    "description": {
+      "translate": "advancement.opusvsexe.chronicles.all.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "haiku_1_5": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_1_5"
+            ]
+          }
+        ]
+      }
+    },
+    "haiku_2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_2"
+            ]
+          }
+        ]
+      }
+    },
+    "haiku_3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_3"
+            ]
+          }
+        ]
+      }
+    },
+    "haiku_4": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_4"
+            ]
+          }
+        ]
+      }
+    },
+    "haiku_5": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_5"
+            ]
+          }
+        ]
+      }
+    },
+    "haiku_omega": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_omega"
+            ]
+          }
+        ]
+      }
+    },
+    "haiku_drone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_drone"
+            ]
+          }
+        ]
+      }
+    },
+    "haiku_drone_plus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_haiku_drone_plus"
+            ]
+          }
+        ]
+      }
+    },
+    "fire_slime": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_fire_slime"
+            ]
+          }
+        ]
+      }
+    },
+    "lava_golem": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_lava_golem"
+            ]
+          }
+        ]
+      }
+    },
+    "diablo": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_diablo"
+            ]
+          }
+        ]
+      }
+    },
+    "ember_slime": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_ember_slime"
+            ]
+          }
+        ]
+      }
+    },
+    "obsidian_golem": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_obsidian_golem"
+            ]
+          }
+        ]
+      }
+    },
+    "flame_demon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_flame_demon"
+            ]
+          }
+        ]
+      }
+    },
+    "sunfinch": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_sunfinch"
+            ]
+          }
+        ]
+      }
+    },
+    "cloud_grazer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_cloud_grazer"
+            ]
+          }
+        ]
+      }
+    },
+    "paradise_wyvern": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_paradise_wyvern"
+            ]
+          }
+        ]
+      }
+    },
+    "angel_boy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_angel_boy"
+            ]
+          }
+        ]
+      }
+    },
+    "shade_spiderling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_shade_spiderling"
+            ]
+          }
+        ]
+      }
+    },
+    "gloom_broodmother": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_gloom_broodmother"
+            ]
+          }
+        ]
+      }
+    },
+    "moonwing_bat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_moonwing_bat"
+            ]
+          }
+        ]
+      }
+    },
+    "mossbound_enderman": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_mossbound_enderman"
+            ]
+          }
+        ]
+      }
+    },
+    "survivor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "opusvsexe:trophy_survivor"
+            ]
+          }
+        ]
+      }
+    },
+    "black_ninja": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [{ "items": ["opusvsexe:trophy_black_ninja"] }] }
+    },
+    "samurai": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [{ "items": ["opusvsexe:trophy_samurai"] }] }
+    },
+    "young_samurai": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [{ "items": ["opusvsexe:trophy_young_samurai"] }] }
+    }
+  },
+  "rewards": {
+    "experience": 1000
+  }
+}

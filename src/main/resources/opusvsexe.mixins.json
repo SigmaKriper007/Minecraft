@@ -5,7 +5,13 @@
 	"mixins": [
 		"ExampleMixin",
 		"PlayerAttackMixin",
-		"JumpBoostMixin"
+		"JumpBoostMixin",
+		"ParadiseVehicleAuthorityMixin",
+		"ParadisePlayerStateMixin",
+		"ParadisePlayerRespawnMixin",
+		"DarkForestPlayerStateMixin",
+		"DarkForestPlayerRespawnMixin",
+		"DarkForestBiomeBuilderMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

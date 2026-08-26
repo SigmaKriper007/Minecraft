@@ -1,0 +1,78 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "fly": {
+      "loop": true,
+      "animation_length": 0.6,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.6": {
+              "vector": [
+                0,
+                0,
+                360
+              ]
+            }
+          }
+        }
+      }
+    },
+    "return": {
+      "loop": true,
+      "animation_length": 0.35,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.35": {
+              "vector": [
+                0,
+                0,
+                -360
+              ]
+            }
+          }
+        },
+        "core": {
+          "scale": {
+            "0.0": {
+              "vector": [
+                1,
+                1,
+                1
+              ]
+            },
+            "0.175": {
+              "vector": [
+                1.4,
+                1.4,
+                1.4
+              ]
+            },
+            "0.35": {
+              "vector": [
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

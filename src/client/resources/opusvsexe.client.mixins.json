@@ -5,11 +5,22 @@
 	"client": [
 		"ExampleClientMixin",
 		"HumanoidArmorLayerMixin",
+		"FireChargePoseMixin",
 		"LivingEntityRendererAccessor",
 		"PlayerRendererMixin",
 		"ArmorStandRendererMixin",
 		"GameRendererMixin",
-		"MinecraftAttackMixin"
+		"MinecraftAttackMixin",
+		"CrimsonSkyMixin",
+		"CrimsonFogMixin",
+		"DarkForestMoonMixin",
+		"TitleScreenReplaceMixin",
+		"MinecraftMusicMixin",
+		"ScreenBackgroundMixin",
+		"AbstractButtonMixin",
+		"AbstractSliderButtonMixin",
+		"SelectWorldScreenMixin",
+		"JoinMultiplayerScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
